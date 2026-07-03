@@ -1,0 +1,14 @@
+{
+  "name": "daoxe-examples",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "OpenAI-compatible examples for using DaoXE with Node.js.",
+  "scripts": {
+    "chat": "node node_chat.mjs"
+  },
+  "dependencies": {
+    "openai": "^6.0.0"
+  }
+}
+
