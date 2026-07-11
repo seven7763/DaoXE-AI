@@ -1,5 +1,7 @@
 # DaoXE API examples and low-cost benchmark
 
+[**English**](README.md) | [简体中文](README.zh-CN.md) | [Русский](#russian)
+
 [![CI](https://github.com/seven7763/DaoXE-AI/actions/workflows/ci.yml/badge.svg)](https://github.com/seven7763/DaoXE-AI/actions/workflows/ci.yml)
 
 Small, auditable examples for calling [DaoXE](https://daoxe.com), plus a safe
@@ -134,6 +136,8 @@ The tests use an in-process mock. They do not require `DAOXE_API_KEY`, do not
 connect to DaoXE, and do not consume balance.
 
 ---
+
+<a id="russian"></a>
 
 # Примеры DaoXE API и недорогой бенчмарк
 
