@@ -5,10 +5,15 @@
   "type": "module",
   "description": "OpenAI-compatible examples for using DaoXE with Node.js.",
   "scripts": {
-    "chat": "node node_chat.mjs"
+    "chat": "node node_chat.mjs",
+    "smoke": "node benchmark.mjs smoke",
+    "compare": "node benchmark.mjs compare",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18"
   },
   "dependencies": {
     "openai": "^6.0.0"
   }
 }
-

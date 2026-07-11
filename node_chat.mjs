@@ -1,12 +1,21 @@
 import OpenAI from "openai";
 
+const apiKey = process.env.DAOXE_API_KEY;
+const model = process.env.DAOXE_MODEL;
+
+if (!apiKey || !model) {
+  console.error("Set DAOXE_API_KEY and DAOXE_MODEL before running this example.");
+  process.exit(2);
+}
+
 const client = new OpenAI({
-  apiKey: process.env.DAOXE_API_KEY,
+  apiKey,
   baseURL: "https://daoxe.com/v1",
 });
 
 const response = await client.chat.completions.create({
-  model: process.env.DAOXE_MODEL || "MODEL_NAME",
+  model,
+  max_tokens: 64,
   messages: [
     {
       role: "user",
@@ -16,4 +25,3 @@ const response = await client.chat.completions.create({
 });
 
 console.log(response.choices[0].message.content);
-
