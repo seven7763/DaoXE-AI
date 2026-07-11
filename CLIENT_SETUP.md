@@ -1,0 +1,95 @@
+# Use DaoXE with OpenAI-compatible clients
+
+DaoXE can be used with clients that accept a custom OpenAI-compatible API
+endpoint. The configuration is the same in every client:
+
+- **Base URL:** `https://daoxe.com/v1`
+- **API key:** create and copy your own key after signing in to
+  [DaoXE](https://daoxe.com)
+- **Model ID:** copy an exact model ID that is currently available to your
+  DaoXE account; the public [models and pricing page](https://daoxe.com/pricing)
+  is useful for discovery, but your account's current model list is
+  authoritative
+
+Never paste a real API key into source control, screenshots, issue reports, or
+shared configuration files. A request from one of these clients may be billed.
+
+> DaoXE is configured below through each client's generic OpenAI-compatible
+> option. This guide does **not** claim that DaoXE is a built-in provider or an
+> official integration in any of these clients.
+
+## Cline
+
+1. Open Cline in VS Code and select the gear icon to open its settings.
+2. Set **API Provider** to **OpenAI Compatible**.
+3. Enter `https://daoxe.com/v1` in **Base URL**.
+4. Enter the API key created in your DaoXE account in **API Key**.
+5. Enter an exact currently available DaoXE model ID in **Model**.
+
+These fields and the OpenAI-compatible provider flow are documented in
+[Cline's official provider guide](https://github.com/cline/cline/blob/63099710895e24593554b1e77ec7852f6f16c05c/docs/provider-config/openai-compatible.mdx).
+
+## Roo Code
+
+1. Open Roo Code in VS Code and select the gear icon to open its settings.
+2. Set **API Provider** to **OpenAI Compatible**.
+3. Enter `https://daoxe.com/v1` in **Base URL**.
+4. Enter the API key created in your DaoXE account in **API Key**.
+5. Choose or enter an exact currently available DaoXE model ID in **Model**.
+
+Roo Code requires native OpenAI-compatible tool calling, so choose a model that
+supports tool/function calling when you want Roo Code to act on files or run
+tools. See the
+[official Roo Code OpenAI-compatible provider guide](https://github.com/RooCodeInc/Roo-Code-Docs/blob/a676c4173ae60348095efaebfd1292a9617622c0/docs/providers/openai-compatible.md).
+
+## Continue
+
+Add a model entry to Continue's `config.yaml`, replacing both placeholders with
+values from your own DaoXE account:
+
+```yaml
+name: DaoXE Config
+version: 0.0.1
+schema: v1
+
+models:
+  - name: DaoXE
+    provider: openai
+    model: <DAOXE_MODEL_ID>
+    apiBase: https://daoxe.com/v1
+    apiKey: <DAOXE_API_KEY>
+```
+
+Save the configuration and reload it in the Continue IDE extension. Continue's
+official OpenAI provider documentation explicitly supports OpenAI-compatible
+providers by changing `apiBase`; see the
+[official configuration reference](https://github.com/continuedev/continue/blob/d0a3c0b626b5bebc3bef4742eec05a0242be0bab/docs/customize/model-providers/top-level/openai.mdx).
+
+## Troubleshooting
+
+- **401 or invalid key:** create or copy the key again from your DaoXE account
+  and make sure no spaces were added.
+- **Model not found:** copy the model ID again from the current model list
+  available to your account. Do not guess a model name from an old example.
+- **Tool-call errors:** choose a currently available model that supports the
+  tool/function-calling features required by the client.
+- **Connection errors:** confirm the base URL is exactly
+  `https://daoxe.com/v1` and that the client can reach `daoxe.com`.
+
+The client steps above were checked against the linked official documentation
+on 2026-07-11. Client interfaces can change, so use the linked upstream guide
+if a label has moved.
+
+## 简体中文摘要
+
+在客户端中选择通用的 **OpenAI Compatible** 配置，Base URL 填
+`https://daoxe.com/v1`。API Key 必须由你登录 DaoXE 后自行创建；模型 ID
+必须从当前账户可用模型列表中复制，不要照抄旧示例。本文不代表 DaoXE 已经是
+Cline、Roo Code 或 Continue 的内置 Provider。
+
+## Кратко по-русски
+
+Выберите в клиенте универсальный режим **OpenAI Compatible** и укажите
+`https://daoxe.com/v1` как Base URL. Создайте API-ключ в своём аккаунте DaoXE и
+скопируйте точный ID модели из актуального списка, доступного вашему аккаунту.
+Эта инструкция не означает, что DaoXE встроен в Cline, Roo Code или Continue.

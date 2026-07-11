@@ -2,6 +2,8 @@
 
 [**English**](README.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [Русский](#russian)
 
+[**Client setup: Cline, Roo Code, Continue**](CLIENT_SETUP.md) | [Postman collection](postman/DaoXE.postman_collection.json)
+
 [![CI](https://github.com/seven7763/DaoXE-AI/actions/workflows/ci.yml/badge.svg)](https://github.com/seven7763/DaoXE-AI/actions/workflows/ci.yml)
 
 Small, auditable examples for calling [DaoXE](https://daoxe.com), plus a safe
