@@ -103,6 +103,27 @@ python -m pip install -r requirements.txt
 python python_chat.py
 ```
 
+## Postman collection
+
+The importable starter collection covers model discovery, OpenAI Chat
+Completions, Anthropic Messages, and the OpenAI Responses API:
+
+- `postman/DaoXE.postman_collection.json`
+- `postman/DaoXE.example.postman_environment.json`
+
+In Postman, choose **Import** and import both files. Select the imported
+`DaoXE API - Example (set local values)` environment, then set its local values:
+
+1. Set `DAOXE_API_KEY` to the key created in your DaoXE dashboard. It is marked
+   as a secret and the checked-in value is empty.
+2. Send **List models**, copy an exact model ID available to your account, and
+   set it as `DAOXE_MODEL`.
+3. Send one of the three small generation requests.
+
+The requests refer to the key only as `{{DAOXE_API_KEY}}` and the model only as
+`{{DAOXE_MODEL}}`. Do not export or commit an environment after entering a real
+key. Generation requests may be billed and deliberately cap output at 8 tokens.
+
 ## Local tests (no API calls)
 
 ```bash
@@ -218,6 +239,27 @@ npm run chat
 python -m pip install -r requirements.txt
 python python_chat.py
 ```
+
+## Коллекция Postman
+
+Готовая коллекция содержит получение списка моделей, OpenAI Chat Completions,
+Anthropic Messages и OpenAI Responses API:
+
+- `postman/DaoXE.postman_collection.json`
+- `postman/DaoXE.example.postman_environment.json`
+
+Импортируйте оба файла через **Import** в Postman и выберите окружение
+`DaoXE API - Example (set local values)`. Затем задайте локальные значения:
+
+1. Вставьте ключ из кабинета DaoXE в `DAOXE_API_KEY`. Переменная помечена как
+   secret, а значение в репозитории оставлено пустым.
+2. Выполните **List models**, скопируйте точный ID доступной модели и сохраните
+   его в `DAOXE_MODEL`.
+3. Запустите один из трёх коротких запросов генерации.
+
+Запросы используют ключ только как `{{DAOXE_API_KEY}}`, а модель только как
+`{{DAOXE_MODEL}}`. Не экспортируйте и не коммитьте окружение после ввода
+настоящего ключа. Генерация может быть платной; ответ ограничен 8 токенами.
 
 ## Локальные тесты без расходов
 

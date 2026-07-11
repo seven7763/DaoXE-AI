@@ -1,0 +1,193 @@
+{
+  "info": {
+    "_postman_id": "3e0bb73d-1dca-4b53-bdab-d372d5b5c13d",
+    "name": "DaoXE API - Safe Starter",
+    "description": "Small starter requests for DaoXE's OpenAI-compatible, Anthropic-compatible, and Responses APIs. Import the example environment, set DAOXE_API_KEY and DAOXE_MODEL locally, and select that environment before sending a request. The collection contains no credentials. Requests may consume balance, so each generated response is capped at 8 tokens.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "event": [
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "pm.test(\"HTTP status is successful\", function () {",
+          "  pm.expect(pm.response.code).to.be.within(200, 299);",
+          "});",
+          "",
+          "pm.test(\"Response is JSON\", function () {",
+          "  pm.response.to.be.json;",
+          "});"
+        ]
+      }
+    }
+  ],
+  "item": [
+    {
+      "name": "Models",
+      "item": [
+        {
+          "name": "List models",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{DAOXE_API_KEY}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://daoxe.com/v1/models",
+              "protocol": "https",
+              "host": [
+                "daoxe",
+                "com"
+              ],
+              "path": [
+                "v1",
+                "models"
+              ]
+            },
+            "description": "Lists model IDs available to the current DaoXE account. Copy an exact ID into the DAOXE_MODEL environment variable."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Generate",
+      "item": [
+        {
+          "name": "OpenAI - Chat Completions",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{DAOXE_API_KEY}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"{{DAOXE_MODEL}}\",\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"Reply with OK.\"\n    }\n  ],\n  \"max_tokens\": 8,\n  \"stream\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://daoxe.com/v1/chat/completions",
+              "protocol": "https",
+              "host": [
+                "daoxe",
+                "com"
+              ],
+              "path": [
+                "v1",
+                "chat",
+                "completions"
+              ]
+            },
+            "description": "Minimal OpenAI-compatible chat request. This request may consume balance."
+          },
+          "response": []
+        },
+        {
+          "name": "Anthropic - Messages",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-api-key",
+                "value": "{{DAOXE_API_KEY}}",
+                "type": "text"
+              },
+              {
+                "key": "anthropic-version",
+                "value": "2023-06-01",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"{{DAOXE_MODEL}}\",\n  \"max_tokens\": 8,\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"Reply with OK.\"\n    }\n  ],\n  \"stream\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://daoxe.com/v1/messages",
+              "protocol": "https",
+              "host": [
+                "daoxe",
+                "com"
+              ],
+              "path": [
+                "v1",
+                "messages"
+              ]
+            },
+            "description": "Minimal Anthropic-compatible Messages request. This request may consume balance."
+          },
+          "response": []
+        },
+        {
+          "name": "OpenAI - Responses",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{DAOXE_API_KEY}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"{{DAOXE_MODEL}}\",\n  \"input\": \"Reply with OK.\",\n  \"max_output_tokens\": 8,\n  \"stream\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://daoxe.com/v1/responses",
+              "protocol": "https",
+              "host": [
+                "daoxe",
+                "com"
+              ],
+              "path": [
+                "v1",
+                "responses"
+              ]
+            },
+            "description": "Minimal OpenAI Responses API request. This request may consume balance."
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
