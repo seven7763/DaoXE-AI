@@ -1,6 +1,6 @@
 # DaoXE API 示例与低成本连通性测试
 
-[English](README.md) | **简体中文** | [Русский](README.md#russian)
+[English](README.md) | **简体中文** | [繁體中文](README.zh-TW.md) | [Русский](README.md#russian)
 
 [![CI](https://github.com/seven7763/DaoXE-AI/actions/workflows/ci.yml/badge.svg)](https://github.com/seven7763/DaoXE-AI/actions/workflows/ci.yml)
 

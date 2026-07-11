@@ -1,6 +1,6 @@
 # DaoXE API examples and low-cost benchmark
 
-[**English**](README.md) | [简体中文](README.zh-CN.md) | [Русский](#russian)
+[**English**](README.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [Русский](#russian)
 
 [![CI](https://github.com/seven7763/DaoXE-AI/actions/workflows/ci.yml/badge.svg)](https://github.com/seven7763/DaoXE-AI/actions/workflows/ci.yml)
 
