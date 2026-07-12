@@ -1,7 +1,8 @@
 # Use DaoXE with OpenAI-compatible clients
 
-DaoXE can be used with clients that accept a custom OpenAI-compatible API
-endpoint. The configuration is the same in every client:
+DaoXE is a multi-model multi-protocol API gateway. Many clients connect through
+the OpenAI-compatible Chat Completions endpoint below; DaoXE also exposes OpenAI
+Responses and Anthropic Messages endpoints for other tools. The configuration is the same in every client:
 
 - **Base URL:** `https://daoxe.com/v1`
 - **API key:** create and copy your own key after signing in to
@@ -64,6 +65,64 @@ Save the configuration and reload it in the Continue IDE extension. Continue's
 official OpenAI provider documentation explicitly supports OpenAI-compatible
 providers by changing `apiBase`; see the
 [official configuration reference](https://github.com/continuedev/continue/blob/d0a3c0b626b5bebc3bef4742eec05a0242be0bab/docs/customize/model-providers/top-level/openai.mdx).
+
+
+
+## Aider
+
+DaoXE works with Aider through the OpenAI-compatible API path:
+
+```bash
+export OPENAI_API_BASE=https://daoxe.com/v1
+export OPENAI_API_KEY=<DAOXE_API_KEY>
+cd /to/your/project
+aider --model openai/<DAOXE_MODEL_ID>
+```
+
+Use an exact model ID currently available to your DaoXE account. Aider may show
+model-warning messages for unfamiliar IDs; that is expected for gateway catalogs.
+
+Public Aider docs PR (if merged): https://github.com/Aider-AI/aider/pull/5438
+
+## LibreChat
+
+Add a custom endpoint in `librechat.yaml` (see LibreChat docs for the full file):
+
+```yaml
+endpoints:
+  custom:
+    - name: 'DaoXE'
+      apiKey: '${DAOXE_API_KEY}'
+      baseURL: 'https://daoxe.com/v1'
+      models:
+        default: ['placeholder-model-id']
+        fetch: true
+      titleConvo: true
+      titleModel: 'current_model'
+      modelDisplayLabel: 'DaoXE'
+```
+
+Set `DAOXE_API_KEY` in your environment. Keep `fetch: true` so model IDs come from
+authenticated `GET /v1/models` instead of a hardcoded list.
+
+Public LibreChat docs PR (if merged): https://github.com/danny-avila/LibreChat/pull/14222
+
+## Open WebUI
+
+In **Admin Settings → Connections**, add an OpenAI-compatible connection:
+
+- **URL:** `https://daoxe.com/v1`
+- **API Key:** your DaoXE key
+- **Model IDs:** leave empty for auto-discovery via `/models`, or allowlist exact IDs
+
+Open WebUI uses the OpenAI Chat Completions protocol path. DaoXE also exposes
+OpenAI Responses and Anthropic Messages endpoints for other clients.
+
+## Multi-protocol note
+
+DaoXE is not OpenAI-only and not limited to OpenAI/Claude model families. The
+exact available model IDs depend on your account catalog. Prefer live discovery
+over hardcoded lists.
 
 ## Troubleshooting
 
