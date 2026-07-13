@@ -154,6 +154,23 @@ Optional: if your stack supports an Anthropic channel type, DaoXE also speaks `P
 > Upstream docs PR https://github.com/labring/FastGPT/pull/7295 was **closed** (maintainers only accept first-party model-cloud vendor tutorials). Use the generic OpenAI channel steps above instead.
 
 
+## Khoj
+
+Self-hosted [Khoj](https://github.com/khoj-ai/khoj) can use DaoXE as an OpenAI-compatible API base (same pattern as LiteLLM / OpenRouter proxies):
+
+1. Create a key in your [DaoXE dashboard](https://daoxe.com/dashboard).
+2. In the Khoj admin panel, add an **API Model API**:
+   - **Name:** `daoxe`
+   - **Api Key:** your DaoXE key
+   - **Api Base Url:** `https://daoxe.com/v1`
+3. Add a **Chat Model** with **Model Type** `Openai`, point it at that API, and set **Name** to an exact model ID from your DaoXE account catalog (`GET /v1/models`).
+4. Select that chat model in Khoj settings.
+
+Notes: self-host only for custom providers; do not hardcode model lists; DaoXE is not available in mainland China.
+
+- Upstream docs PR (open): https://github.com/khoj-ai/khoj/pull/1373
+- Setup gist: https://gist.github.com/seven7763/b547f1f889872a73a5df7983d40b0636
+
 ## LLM CLI (simonw/llm)
 
 DaoXE has a docs example PR for [LLM](https://github.com/simonw/llm) (`extra-openai-models.yaml`). Until it merges:
