@@ -578,3 +578,55 @@ Add an OpenAI-compatible host pointing at DaoXE:
 3. API key from the DaoXE dashboard; load models from your account catalog.
 
 Upstream PR: https://github.com/enricoros/big-AGI/pull/1160
+
+## DSPy
+
+```python
+import os
+import dspy
+
+lm = dspy.LM(
+    f"openai/{os.environ['DAOXE_MODEL']}",
+    api_key=os.environ["DAOXE_API_KEY"],
+    api_base="https://daoxe.com/v1",
+    model_type="chat",
+)
+dspy.configure(lm=lm)
+```
+
+Upstream: https://github.com/stanfordnlp/dspy/pull/10008
+
+## Haystack
+
+```python
+from haystack.utils import Secret
+from haystack.components.generators.chat import OpenAIChatGenerator
+
+generator = OpenAIChatGenerator(
+    api_key=Secret.from_env_var("DAOXE_API_KEY"),
+    api_base_url="https://daoxe.com/v1",
+    model="YOUR_DAOXE_MODEL_ID",
+)
+```
+
+Upstream: https://github.com/deepset-ai/haystack/pull/11989
+
+## Mem0
+
+```python
+import os
+from mem0 import Memory
+
+os.environ["OPENAI_API_KEY"] = os.environ["DAOXE_API_KEY"]
+config = {
+    "llm": {
+        "provider": "openai",
+        "config": {
+            "model": "YOUR_DAOXE_MODEL_ID",
+            "openai_base_url": "https://daoxe.com/v1",
+        },
+    }
+}
+m = Memory.from_config(config)
+```
+
