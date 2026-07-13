@@ -22,14 +22,36 @@ shared configuration files. A request from one of these clients may be billed.
 
 ## Cline
 
+DaoXE is multi-model and multi-protocol. **Cline** connects through its generic
+**OpenAI Compatible** provider (custom base URL). There is **no** separate
+built-in **DaoXE** entry in Cline's API provider list—do not look for a
+first-class DaoXE dropdown option.
+
 1. Open Cline in VS Code and select the gear icon to open its settings.
 2. Set **API Provider** to **OpenAI Compatible**.
 3. Enter `https://daoxe.com/v1` in **Base URL**.
-4. Enter the API key created in your DaoXE account in **API Key**.
-5. Enter an exact currently available DaoXE model ID in **Model**.
+4. Enter the API key created in your DaoXE dashboard in **API Key**.
+5. Enter an exact model ID currently available to your DaoXE account in
+   **Model** / **Model ID** (copy from your account catalog or
+   `GET /v1/models`; do not hardcode a list from a blog post).
+6. Optionally adjust **Model Configuration** (for example max output tokens or
+   context window) if your Cline build exposes those fields.
 
-These fields and the OpenAI-compatible provider flow are documented in
-[Cline's official provider guide](https://github.com/cline/cline/blob/63099710895e24593554b1e77ec7852f6f16c05c/docs/provider-config/openai-compatible.mdx).
+Notes:
+
+- This path uses DaoXE's **OpenAI-compatible Chat Completions** endpoint. DaoXE
+  also exposes OpenAI Responses and Anthropic Messages for other clients; those
+  protocols are not required for the Cline OpenAI Compatible setup above.
+- Prefer live model IDs from your account. A request may be billed.
+
+> Upstream Cline docs PR
+> https://github.com/cline/cline/pull/12244 was **closed** (maintainers found
+> third-party gateway notes confusing next to first-party provider pages and
+> prefer pointers from the gateway side). Use the steps above instead of waiting
+> for a built-in DaoXE provider in Cline.
+
+Official Cline field names and OpenAI Compatible flow:
+[Cline OpenAI Compatible provider guide](https://github.com/cline/cline/blob/main/docs/provider-config/openai-compatible.mdx).
 
 ## Roo Code
 
