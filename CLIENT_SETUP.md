@@ -195,6 +195,47 @@ llm -m daoxe 'Reply with OK'
 
 Upstream PR (open): https://github.com/simonw/llm/pull/1528
 
+## CrewAI
+
+DaoXE works with [CrewAI](https://github.com/crewAIInc/crewAI) as a custom OpenAI-compatible endpoint:
+
+```python
+from crewai import LLM
+import os
+
+llm = LLM(
+    model="openai/YOUR_DAOXE_MODEL_ID",  # exact ID from your DaoXE account catalog
+    custom_openai=True,
+    base_url="https://daoxe.com/v1",
+    api_key=os.getenv("DAOXE_API_KEY"),
+)
+```
+
+Use that `llm` on agents/tasks as usual. Prefer live model IDs from `GET /v1/models`. Not available in mainland China.
+
+Upstream docs PR (open): https://github.com/crewAIInc/crewAI/pull/6527
+
+## browser-use
+
+[browser-use](https://github.com/browser-use/browser-use) can call DaoXE through `ChatOpenAI` with an OpenAI-compatible base URL (same pattern as OpenRouter/Novita examples):
+
+```python
+import os
+from browser_use import Agent, ChatOpenAI
+
+agent = Agent(
+    task="Your task",
+    llm=ChatOpenAI(
+        base_url="https://daoxe.com/v1",
+        model=os.getenv("DAOXE_MODEL_ID", "YOUR_DAOXE_MODEL_ID"),
+        api_key=os.getenv("DAOXE_API_KEY"),
+    ),
+    use_vision=False,
+)
+```
+
+Upstream example PR (open): https://github.com/browser-use/browser-use/pull/5209
+
 ## LiteLLM
 
 DaoXE has an OpenAI-compatible provider registration PR for [LiteLLM](https://github.com/BerriAI/litellm) (`openai_like/providers.json`) plus a docs page PR.
