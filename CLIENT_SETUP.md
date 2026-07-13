@@ -768,6 +768,20 @@ m = Memory.from_config(config)
 
 
 
+
+
+## Opik (Comet)
+
+Configure Opik / OpenAI-compatible tracing against DaoXE:
+
+- Base URL: `https://daoxe.com/v1`
+- API key: DaoXE dashboard
+- Model IDs: from your account `GET /v1/models`
+
+Upstream docs PR (if open): https://github.com/comet-ml/opik/pull/7459  
+Multi-model multi-protocol gateway; mainland China unavailable.
+
+
 ## OpenAI Agents SDK (Python)
 
 Use `OpenAIChatCompletionsModel` with a custom base URL:
