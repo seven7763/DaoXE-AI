@@ -762,3 +762,16 @@ config = {
 m = Memory.from_config(config)
 ```
 
+
+
+## Stagehand (Browserbase)
+
+Use Stagehand with an OpenAI-compatible model endpoint:
+
+- Base URL / API base: `https://daoxe.com/v1`
+- API key: DaoXE dashboard key
+- Model: exact account catalog ID (`GET /v1/models`)
+
+Upstream PR (if open): https://github.com/browserbase/stagehand/pull/2350  
+Not available in mainland China.
+
