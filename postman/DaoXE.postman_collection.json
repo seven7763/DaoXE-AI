@@ -186,6 +186,28 @@
             "description": "Minimal OpenAI Responses API request. This request may consume balance."
           },
           "response": []
+        },
+        {
+          "name": "OpenAI - Image Generations",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{api_key}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"{{image_model}}\",\n  \"prompt\": \"a simple geometric logo, flat design\",\n  \"n\": 1,\n  \"size\": \"1024x1024\"\n}\n"
+            },
+            "url": "https://daoxe.com/v1/images/generations",
+            "description": "OpenAI-compatible image generation. Use an exact image model ID from your account catalog. May be billed. Not available in mainland China."
+          }
         }
       ]
     }
