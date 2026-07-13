@@ -119,6 +119,16 @@ Typical flow:
 
 OpenCode’s contributing guide prefers new providers via models.dev first; that path is already done.
 
+## Goose
+
+DaoXE has a declarative OpenAI-compatible provider PR for [goose](https://github.com/aaif-goose/goose) (bundled JSON + registry). Until it merges, configure a custom OpenAI-compatible endpoint:
+
+- **Base URL:** `https://daoxe.com/v1`
+- **API key env:** `DAOXE_API_KEY`
+- **Model IDs:** prefer live discovery from your DaoXE account (`GET /v1/models`)
+
+Upstream PR (open): https://github.com/aaif-goose/goose/pull/10412
+
 ## LibreChat
 
 Add a custom endpoint in `librechat.yaml` (see LibreChat docs for the full file):
