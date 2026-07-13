@@ -507,5 +507,5 @@ Add an OpenAI-compatible host pointing at DaoXE:
 2. Host: `https://daoxe.com` (app may append `/v1`).
 3. API key from the DaoXE dashboard; load models from your account catalog.
 
-Upstream PR: https://github.com/enricoros/big-AGI/pulls?q=is%3Apr+DaoXE
+Upstream PR: https://github.com/enricoros/big-AGI/pull/1160
 
