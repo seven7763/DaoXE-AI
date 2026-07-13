@@ -110,7 +110,8 @@ python python_chat.py
 ## Postman collection
 
 The importable starter collection covers model discovery, OpenAI Chat
-Completions, Anthropic Messages, and the OpenAI Responses API:
+Completions, Anthropic Messages, the OpenAI Responses API, and OpenAI-compatible
+image generation:
 
 - `postman/DaoXE.postman_collection.json`
 - `postman/DaoXE.example.postman_environment.json`
@@ -120,13 +121,17 @@ In Postman, choose **Import** and import both files. Select the imported
 
 1. Set `DAOXE_API_KEY` to the key created in your DaoXE dashboard. It is marked
    as a secret and the checked-in value is empty.
-2. Send **List models**, copy an exact model ID available to your account, and
-   set it as `DAOXE_MODEL`.
-3. Send one of the three small generation requests.
+2. Send **List models**, copy an exact text model ID available to your account,
+   and set it as `DAOXE_MODEL`.
+3. For image smoke tests, copy an exact image model ID into
+   `DAOXE_IMAGE_MODEL` (leave empty if you are not testing images).
+4. Send one of the small generation requests (Chat Completions, Messages,
+   Responses, or Image Generations).
 
-The requests refer to the key only as `{{DAOXE_API_KEY}}` and the model only as
-`{{DAOXE_MODEL}}`. Do not export or commit an environment after entering a real
-key. Generation requests may be billed and deliberately cap output at 8 tokens.
+The requests refer to the key only as `{{DAOXE_API_KEY}}`, text models as
+`{{DAOXE_MODEL}}`, and image models as `{{DAOXE_IMAGE_MODEL}}`. Do not export or
+commit an environment after entering a real key. Generation requests may be
+billed; text responses deliberately cap output at 8 tokens.
 
 ## Local tests (no API calls)
 
@@ -249,7 +254,7 @@ python python_chat.py
 ## Коллекция Postman
 
 Готовая коллекция содержит получение списка моделей, OpenAI Chat Completions,
-Anthropic Messages и OpenAI Responses API:
+Anthropic Messages, OpenAI Responses API и OpenAI-compatible image generation:
 
 - `postman/DaoXE.postman_collection.json`
 - `postman/DaoXE.example.postman_environment.json`
@@ -259,13 +264,17 @@ Anthropic Messages и OpenAI Responses API:
 
 1. Вставьте ключ из кабинета DaoXE в `DAOXE_API_KEY`. Переменная помечена как
    secret, а значение в репозитории оставлено пустым.
-2. Выполните **List models**, скопируйте точный ID доступной модели и сохраните
+2. Выполните **List models**, скопируйте точный ID текстовой модели и сохраните
    его в `DAOXE_MODEL`.
-3. Запустите один из трёх коротких запросов генерации.
+3. Для проверки image endpoint сохраните точный ID image-модели в
+   `DAOXE_IMAGE_MODEL` (можно оставить пустым, если image не тестируете).
+4. Запустите один из коротких запросов генерации (Chat Completions, Messages,
+   Responses или Image Generations).
 
-Запросы используют ключ только как `{{DAOXE_API_KEY}}`, а модель только как
-`{{DAOXE_MODEL}}`. Не экспортируйте и не коммитьте окружение после ввода
-настоящего ключа. Генерация может быть платной; ответ ограничен 8 токенами.
+Запросы используют ключ только как `{{DAOXE_API_KEY}}`, текстовые модели как
+`{{DAOXE_MODEL}}`, image-модели как `{{DAOXE_IMAGE_MODEL}}`. Не экспортируйте и
+не коммитьте окружение после ввода настоящего ключа. Генерация может быть
+платной; текстовый ответ ограничен 8 токенами.
 
 ## Локальные тесты без расходов
 
