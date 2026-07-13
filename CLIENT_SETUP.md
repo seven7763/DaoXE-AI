@@ -770,6 +770,20 @@ m = Memory.from_config(config)
 
 
 
+
+
+## Strands Agents (community OpenAI-compatible)
+
+Use Strands `OpenAIModel` (or equivalent OpenAI-compatible provider) with:
+
+- Base URL: `https://daoxe.com/v1`
+- API key: DaoXE dashboard
+- Model: exact account catalog ID
+
+Upstream docs PR (if open): https://github.com/strands-agents/harness-sdk/pull/3218  
+Multi-protocol gateway; not available in mainland China.
+
+
 ## Opik (Comet)
 
 Configure Opik / OpenAI-compatible tracing against DaoXE:
