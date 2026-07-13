@@ -601,6 +601,47 @@ model = OpenAIModel(
 
 Upstream: https://github.com/huggingface/smolagents/pull/2514
 
+
+## Instructor
+
+```python
+import os
+from openai import OpenAI
+import instructor
+from pydantic import BaseModel
+
+class User(BaseModel):
+    name: str
+    age: int
+
+client = instructor.from_openai(
+    OpenAI(api_key=os.environ["DAOXE_API_KEY"], base_url="https://daoxe.com/v1")
+)
+user = client.chat.completions.create(
+    model=os.environ["DAOXE_MODEL"],
+    messages=[{"role": "user", "content": "Ivan is 28"}],
+    response_model=User,
+)
+```
+
+Upstream: https://github.com/567-labs/instructor/pull/2436
+
+## Outlines
+
+```python
+import os
+import openai
+import outlines
+
+client = openai.OpenAI(
+    base_url="https://daoxe.com/v1",
+    api_key=os.environ["DAOXE_API_KEY"],
+)
+model = outlines.from_openai(client, os.environ["DAOXE_MODEL"])
+```
+
+Upstream: https://github.com/dottxt-ai/outlines/pull/1920
+
 ## Agno
 
 ```python
