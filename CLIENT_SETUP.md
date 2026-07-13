@@ -1,8 +1,9 @@
-# Use DaoXE with OpenAI-compatible clients
+# Use DaoXE with coding clients (OpenAI-compatible and Claude protocol)
 
 DaoXE is a multi-model multi-protocol API gateway. Many clients connect through
-the OpenAI-compatible Chat Completions endpoint below; DaoXE also exposes OpenAI
-Responses and Anthropic Messages endpoints for other tools. The configuration is the same in every client:
+the OpenAI-compatible Chat Completions endpoint; DaoXE also exposes **OpenAI
+Responses**, **Anthropic Messages (Claude protocol)**, and OpenAI-compatible
+image generation for other tools.
 
 - **Base URL:** `https://daoxe.com/v1`
 - **API key:** create and copy your own key after signing in to
@@ -118,11 +119,75 @@ In **Admin Settings → Connections**, add an OpenAI-compatible connection:
 Open WebUI uses the OpenAI Chat Completions protocol path. DaoXE also exposes
 OpenAI Responses and Anthropic Messages endpoints for other clients.
 
+## Claude Code / Anthropic Messages (Claude protocol)
+
+DaoXE supports the **Claude / Anthropic Messages** protocol, not only
+OpenAI-compatible Chat Completions. Use this path for Claude Code, Anthropic
+SDKs, and tools that speak Messages (for example some Claude Code provider
+managers). This is a protocol choice; it does **not** mean DaoXE only serves
+Claude models.
+
+Public endpoint shape (same host, Messages path):
+
+```text
+Base URL:  https://daoxe.com
+Messages:  POST https://daoxe.com/v1/messages
+```
+
+Typical headers for a minimal request:
+
+```text
+x-api-key: <DAOXE_API_KEY>
+anthropic-version: 2023-06-01
+content-type: application/json
+```
+
+Minimal body:
+
+```json
+{
+  "model": "<DAOXE_MODEL_ID>",
+  "max_tokens": 8,
+  "messages": [
+    { "role": "user", "content": "Reply with OK." }
+  ]
+}
+```
+
+cURL smoke (may be billed; keep `max_tokens` tiny):
+
+```bash
+export DAOXE_API_KEY="your_api_key"
+export DAOXE_MODEL="your_exact_model_id"
+
+curl --fail-with-body --show-error --silent \
+  -H "x-api-key: $DAOXE_API_KEY" \
+  -H "anthropic-version: 2023-06-01" \
+  -H "Content-Type: application/json" \
+  -d "{
+    \"model\": \"$DAOXE_MODEL\",
+    \"max_tokens\": 8,
+    \"messages\": [{\"role\":\"user\",\"content\":\"Reply with OK.\"}]
+  }" \
+  "https://daoxe.com/v1/messages"
+```
+
+Notes:
+
+- Prefer an exact model ID from the catalog available to **your** account.
+- Client UIs differ: some want base `https://daoxe.com`, others
+  `https://daoxe.com/v1`. Match the client docs; the Messages path remains
+  `/v1/messages`.
+- Related discussion: [CC Switch DaoXE universal preset](https://github.com/farion1231/cc-switch/issues/5258).
+- Postman starter: `postman/DaoXE.postman_collection.json` → **Anthropic - Messages**.
+
 ## Multi-protocol note
 
-DaoXE is not OpenAI-only and not limited to OpenAI/Claude model families. The
-exact available model IDs depend on your account catalog. Prefer live discovery
-over hardcoded lists.
+DaoXE is multi-model and multi-protocol: OpenAI Chat Completions, OpenAI
+Responses, Anthropic Messages (Claude protocol), and OpenAI-compatible image
+generation where available. It is not OpenAI-only and not limited to
+OpenAI/Claude model families. Exact model IDs depend on your account catalog.
+Prefer live discovery over hardcoded lists.
 
 ## Troubleshooting
 
@@ -142,13 +207,17 @@ if a label has moved.
 ## 简体中文摘要
 
 在客户端中选择通用的 **OpenAI Compatible** 配置，Base URL 填
-`https://daoxe.com/v1`。API Key 必须由你登录 DaoXE 后自行创建；模型 ID
-必须从当前账户可用模型列表中复制，不要照抄旧示例。本文不代表 DaoXE 已经是
-Cline、Roo Code 或 Continue 的内置 Provider。
+`https://daoxe.com/v1`。若客户端走 **Claude / Anthropic Messages** 协议，则请求
+`https://daoxe.com/v1/messages`（`x-api-key` + `anthropic-version`）。API Key
+必须由你登录 DaoXE 后自行创建；模型 ID 必须从当前账户可用模型列表中复制，不要
+照抄旧示例。本文不代表 DaoXE 已经是 Cline、Roo Code、Continue 或 Claude Code 的
+内置 Provider。
 
 ## Кратко по-русски
 
 Выберите в клиенте универсальный режим **OpenAI Compatible** и укажите
-`https://daoxe.com/v1` как Base URL. Создайте API-ключ в своём аккаунте DaoXE и
-скопируйте точный ID модели из актуального списка, доступного вашему аккаунту.
-Эта инструкция не означает, что DaoXE встроен в Cline, Roo Code или Continue.
+`https://daoxe.com/v1` как Base URL. Для протокола **Claude / Anthropic Messages**
+используйте `https://daoxe.com/v1/messages`. Создайте API-ключ в своём аккаунте
+DaoXE и скопируйте точный ID модели из актуального списка, доступного вашему
+аккаунту. Эта инструкция не означает, что DaoXE встроен в Cline, Roo Code,
+Continue или Claude Code.
