@@ -543,7 +543,12 @@ English client-setup tutorial (billing-friction framing):
 
 https://viblo.asia/p/wire-cline-continue-claude-code-to-one-multi-protocol-gateway-when-card-checkout-fails-PoL7emEk4vk
 
+Claude Code host-root vs `/v1` (404 debug):
+https://viblo.asia/p/claude-code-404-on-third-party-gateways-host-root-vs-v1-y0VGwXe0VPA
+
 Note: first post may sit in Viblo spam review briefly; direct link works.
+
+CIS/VN operator paste packs live in the DaoXE promotion workspace (`cis-vn-expanded-channels-pack`).
 
 ## Microsoft AutoGen (AgentChat)
 
@@ -578,6 +583,22 @@ Add an OpenAI-compatible host pointing at DaoXE:
 3. API key from the DaoXE dashboard; load models from your account catalog.
 
 Upstream PR: https://github.com/enricoros/big-AGI/pull/1160
+
+
+## LlamaIndex
+
+```python
+import os
+from llama_index.llms.openai_like import OpenAILike
+
+llm = OpenAILike(
+    model=os.environ["DAOXE_MODEL"],
+    api_base="https://daoxe.com/v1",
+    api_key=os.environ["DAOXE_API_KEY"],
+    is_chat_model=True,
+    is_function_calling_model=True,
+)
+```
 
 ## DSPy
 
