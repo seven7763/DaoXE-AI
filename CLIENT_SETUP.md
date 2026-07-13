@@ -85,6 +85,40 @@ model-warning messages for unfamiliar IDs; that is expected for gateway catalogs
 
 Public Aider docs PR (if merged): https://github.com/Aider-AI/aider/pull/5438
 
+## DeepChat
+
+DaoXE is available as a **built-in provider** in DeepChat (merged upstream):
+
+1. Open DeepChat → Providers and select **DaoXE**.
+2. Paste the API key created in your DaoXE account.
+3. Pick an exact model ID currently available to your account (or refresh the model list from the provider).
+
+If your DeepChat build is older than the merge, add DaoXE as a custom OpenAI-compatible endpoint with base URL `https://daoxe.com/v1` until you upgrade.
+
+Upstream PR: https://github.com/ThinkInAIXYZ/deepchat/pull/1948
+
+## Claude Code Router (CCR)
+
+DaoXE has a multi-protocol provider preset PR for Claude Code Router (Anthropic Messages + OpenAI Chat Completions + OpenAI Responses). Until it merges, add DaoXE manually:
+
+1. Create a provider with base URL **host root** `https://daoxe.com` (CCR appends `/v1` for OpenAI paths and uses root + `/v1/messages` for Anthropic).
+2. Enable the protocols your workflow needs: `anthropic_messages`, `openai_chat_completions`, and/or `openai_responses`.
+3. Use your DaoXE API key; do not hardcode model lists—pull live catalog IDs for your account.
+
+Upstream PR (open): https://github.com/musistudio/claude-code-router/pull/1530
+
+## OpenCode (via models.dev)
+
+OpenCode loads providers from [models.dev](https://models.dev). DaoXE is listed there after merge of https://github.com/anomalyco/models.dev/pull/3199.
+
+Typical flow:
+
+1. Install/run OpenCode and open provider auth / model selection.
+2. Choose **DaoXE** (env `DAOXE_API_KEY`, API base `https://daoxe.com/v1` in the models.dev entry).
+3. Authenticate with a key from your DaoXE account and select a live model ID.
+
+OpenCode’s contributing guide prefers new providers via models.dev first; that path is already done.
+
 ## LibreChat
 
 Add a custom endpoint in `librechat.yaml` (see LibreChat docs for the full file):
@@ -181,6 +215,7 @@ Notes:
 - **Claude Code CLI:** for the native `ANTHROPIC_BASE_URL` / `ANTHROPIC_AUTH_TOKEN`
   setup (no proxy or router), see [CLAUDE_CODE.md](CLAUDE_CODE.md).
 - Related discussion: [CC Switch DaoXE universal preset](https://github.com/farion1231/cc-switch/issues/5258).
+- Claude Code Router preset PR: https://github.com/musistudio/claude-code-router/pull/1530
 - Postman starter: `postman/DaoXE.postman_collection.json` → **Anthropic - Messages**.
 
 ## Multi-protocol note
@@ -213,7 +248,7 @@ if a label has moved.
 `https://daoxe.com/v1/messages`（`x-api-key` + `anthropic-version`）。API Key
 必须由你登录 DaoXE 后自行创建；模型 ID 必须从当前账户可用模型列表中复制，不要
 照抄旧示例。本文不代表 DaoXE 已经是 Cline、Roo Code、Continue 或 Claude Code 的
-内置 Provider。
+内置 Provider（DeepChat 内置与 models.dev / OpenCode 路径见上文）。
 
 ## Кратко по-русски
 
@@ -221,5 +256,5 @@ if a label has moved.
 `https://daoxe.com/v1` как Base URL. Для протокола **Claude / Anthropic Messages**
 используйте `https://daoxe.com/v1/messages`. Создайте API-ключ в своём аккаунте
 DaoXE и скопируйте точный ID модели из актуального списка, доступного вашему
-аккаунту. Эта инструкция не означает, что DaoXE встроен в Cline, Roo Code,
-Continue или Claude Code.
+аккаунту. Эта инструкция не означает, что DaoXE встроен во все клиенты (DeepChat
+и models.dev/OpenCode — см. разделы выше).
