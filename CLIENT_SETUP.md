@@ -129,17 +129,44 @@ DaoXE has a multi-protocol provider preset PR for Claude Code Router (Anthropic 
 
 Upstream PR (open): https://github.com/musistudio/claude-code-router/pull/1530
 
-## OpenCode (via models.dev)
+## OpenCode
 
-OpenCode loads providers from [models.dev](https://models.dev). DaoXE is listed there after merge of https://github.com/anomalyco/models.dev/pull/3199.
+DaoXE is multi-model and multi-protocol. OpenCode can use the **OpenAI-compatible** path (`@ai-sdk/openai-compatible`).
 
-Typical flow:
+### A) models.dev listing (if present)
 
-1. Install/run OpenCode and open provider auth / model selection.
-2. Choose **DaoXE** (env `DAOXE_API_KEY`, API base `https://daoxe.com/v1` in the models.dev entry).
-3. Authenticate with a key from your DaoXE account and select a live model ID.
+After https://github.com/anomalyco/models.dev/pull/3199, DaoXE may appear in OpenCode’s provider list from [models.dev](https://models.dev). Use your DaoXE API key and an exact account model ID.
 
-OpenCode’s contributing guide prefers new providers via models.dev first; that path is already done.
+### B) Custom provider config (always works)
+
+1. Run `/connect` → **Other** → provider id `daoxe` → paste your DaoXE API key.
+2. Put this in project `opencode.json` (replace the model key with an exact ID from your DaoXE account / `GET /v1/models`):
+
+```json
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "daoxe": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "DaoXE",
+      "options": {
+        "baseURL": "https://daoxe.com/v1"
+      },
+      "models": {
+        "YOUR_DAOXE_MODEL_ID": {
+          "name": "DaoXE model (replace with your account model ID)"
+        }
+      }
+    }
+  }
+}
+```
+
+3. Run `/models` and select the DaoXE entry.
+
+Upstream docs PR: https://github.com/anomalyco/opencode/pull/36649
+
+DaoXE also exposes OpenAI Responses and Anthropic Messages for other clients; OpenCode’s path above is Chat Completions via the OpenAI-compatible package.
 
 ## Goose
 
