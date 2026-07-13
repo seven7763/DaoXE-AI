@@ -151,6 +151,31 @@ DaoXE has a self-host model-config docs PR for [FastGPT](https://github.com/labr
 
 Upstream PR (open): https://github.com/labring/FastGPT/pull/7295
 
+
+## LLM CLI (simonw/llm)
+
+DaoXE has a docs example PR for [LLM](https://github.com/simonw/llm) (`extra-openai-models.yaml`). Until it merges:
+
+```bash
+llm keys set daoxe
+# paste key
+```
+
+```yaml
+# in extra-openai-models.yaml
+- model_id: daoxe
+  model_name: YOUR_DAOXE_MODEL_ID
+  api_base: "https://daoxe.com/v1"
+  api_key_name: daoxe
+  supports_tools: true
+```
+
+```bash
+llm -m daoxe 'Reply with OK'
+```
+
+Upstream PR (open): https://github.com/simonw/llm/pull/1528
+
 ## LibreChat
 
 Add a custom endpoint in `librechat.yaml` (see LibreChat docs for the full file):
