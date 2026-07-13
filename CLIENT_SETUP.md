@@ -582,7 +582,8 @@ Draft gist: https://gist.github.com/seven7763/4256a404bbe8b00407ce6f5973198218
 English posts already live (direct links; may be spam-filtered from homepage):
 
 - Client setup: https://viblo.asia/p/wire-cline-continue-claude-code-to-one-multi-protocol-gateway-when-card-checkout-fails-PoL7emEk4vk
-- Claude Code host-root vs `/v1` (404): https://viblo.asia/p/claude-code-404-on-third-party-gateways-host-root-vs-v1-y0VGwXe0VPA
+- Claude Code 404 (VI): https://viblo.asia/p/claude-code-404-tren-multi-protocol-gateway-host-root-vs-v1-XRJ8Rg19VGq
+- Claude Code host-root vs `/v1` (404, EN): https://viblo.asia/p/claude-code-404-on-third-party-gateways-host-root-vs-v1-y0VGwXe0VPA
 
 CIS/VN operator paste packs: https://gist.github.com/seven7763/8f294b086a5d0e6f981c852d62b8c587
 
