@@ -510,6 +510,14 @@ danh sách blog. Claude Code: `ANTHROPIC_BASE_URL=https://daoxe.com` (host root)
 mainland China**. Billing-friction checklist (DEV):
 https://dev.to/seven7763/testing-an-ai-api-from-a-country-where-the-official-card-checkout-keeps-failing-3ob8
 
+## Viblo (Vietnam tutorial)
+
+English client-setup tutorial (billing-friction framing):
+
+https://viblo.asia/p/wire-cline-continue-claude-code-to-one-multi-protocol-gateway-when-card-checkout-fails-PoL7emEk4vk
+
+Note: first post may sit in Viblo spam review briefly; direct link works.
+
 ## Microsoft AutoGen (AgentChat)
 
 Use the OpenAI-compatible model client with DaoXE:
