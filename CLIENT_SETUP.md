@@ -405,11 +405,23 @@ if a label has moved.
 照抄旧示例。本文不代表 DaoXE 已经是 Cline、Roo Code、Continue 或 Claude Code 的
 内置 Provider（DeepChat 内置与 models.dev / OpenCode 路径见上文）。
 
-## Кратко по-русски
+## Кратко по-русски (CIS / релоканты)
 
 Выберите в клиенте универсальный режим **OpenAI Compatible** и укажите
 `https://daoxe.com/v1` как Base URL. Для протокола **Claude / Anthropic Messages**
-используйте `https://daoxe.com/v1/messages`. Создайте API-ключ в своём аккаунте
-DaoXE и скопируйте точный ID модели из актуального списка, доступного вашему
-аккаунту. Эта инструкция не означает, что DaoXE встроен во все клиенты (DeepChat
-и models.dev/OpenCode — см. разделы выше).
+используйте `https://daoxe.com/v1/messages` (для Claude Code — корень хоста
+`https://daoxe.com`, см. [CLAUDE_CODE.md](CLAUDE_CODE.md)). Создайте API-ключ в
+своём аккаунте DaoXE и скопируйте точный ID модели из актуального списка
+аккаунта (`GET /v1/models`). Русскоязычный канал: [@daoxe_api_ru](https://t.me/daoxe_api_ru)
+— для разработчиков в CIS и на релокации (языковой канал, не geo-target «только РФ»).
+Эта инструкция не означает, что DaoXE встроен во все клиенты (DeepChat и
+models.dev/OpenCode — см. разделы выше).
+
+## Tóm tắt tiếng Việt / Vietnam note (English-first)
+
+Chọn **OpenAI Compatible**, Base URL `https://daoxe.com/v1`, API key từ dashboard
+DaoXE, model ID **chính xác** từ tài khoản (`GET /v1/models`) — không hardcode
+danh sách blog. Claude Code: `ANTHROPIC_BASE_URL=https://daoxe.com` (host root)
++ `ANTHROPIC_AUTH_TOKEN`. DaoXE is multi-model multi-protocol; **not available in
+mainland China**. Billing-friction checklist (DEV):
+https://dev.to/seven7763/testing-an-ai-api-from-a-country-where-the-official-card-checkout-keeps-failing-3ob8
