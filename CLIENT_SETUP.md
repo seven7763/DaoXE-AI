@@ -764,6 +764,19 @@ m = Memory.from_config(config)
 
 
 
+
+
+## Graphiti
+
+Use Graphiti's OpenAI-compatible client with DaoXE:
+
+- `base_url=https://daoxe.com/v1`
+- API key + exact model IDs from your account catalog
+
+Upstream PR (if open): https://github.com/getzep/graphiti/pull/1649  
+Not available in mainland China.
+
+
 ## Stagehand (Browserbase)
 
 Use Stagehand with an OpenAI-compatible model endpoint:
