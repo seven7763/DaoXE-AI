@@ -510,6 +510,33 @@ danh sách blog. Claude Code: `ANTHROPIC_BASE_URL=https://daoxe.com` (host root)
 mainland China**. Billing-friction checklist (DEV):
 https://dev.to/seven7763/testing-an-ai-api-from-a-country-where-the-official-card-checkout-keeps-failing-3ob8
 
+
+## Microsoft Semantic Kernel (Python)
+
+Use the OpenAI connector with a custom `AsyncOpenAI` client (same pattern as the Ollama/LM Studio samples):
+
+```python
+import os
+from openai import AsyncOpenAI
+from semantic_kernel import Kernel
+from semantic_kernel.connectors.ai.open_ai import OpenAIChatCompletion
+
+kernel = Kernel()
+client = AsyncOpenAI(
+    api_key=os.environ["DAOXE_API_KEY"],
+    base_url="https://daoxe.com/v1",
+)
+kernel.add_service(
+    OpenAIChatCompletion(
+        service_id="daoxe",
+        ai_model_id=os.environ["DAOXE_MODEL"],  # exact account model ID
+        async_client=client,
+    )
+)
+```
+
+Upstream sample PR (if open): search `samples/add-daoxe-openai-compatible` on semantic-kernel forks.
+
 ## Viblo (Vietnam tutorial)
 
 English client-setup tutorial (billing-friction framing):
