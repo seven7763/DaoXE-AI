@@ -501,14 +501,16 @@ if a label has moved.
 Эта инструкция не означает, что DaoXE встроен во все клиенты (DeepChat и
 models.dev/OpenCode — см. разделы выше).
 
-## Tóm tắt tiếng Việt / Vietnam note (English-first)
+## Tóm tắt tiếng Việt / Vietnam note (Vietnamese-first for local channels)
 
 Chọn **OpenAI Compatible**, Base URL `https://daoxe.com/v1`, API key từ dashboard
 DaoXE, model ID **chính xác** từ tài khoản (`GET /v1/models`) — không hardcode
 danh sách blog. Claude Code: `ANTHROPIC_BASE_URL=https://daoxe.com` (host root)
 + `ANTHROPIC_AUTH_TOKEN`. DaoXE is multi-model multi-protocol; **not available in
-mainland China**. Billing-friction checklist (DEV):
-https://dev.to/seven7763/testing-an-ai-api-from-a-country-where-the-official-card-checkout-keeps-failing-3ob8
+mainland China**.
+
+- Full Vietnamese Viblo draft (paste-ready): https://gist.github.com/seven7763/4256a404bbe8b00407ce6f5973198218
+- Billing-friction checklist (DEV, EN): https://dev.to/seven7763/testing-an-ai-api-from-a-country-where-the-official-card-checkout-keeps-failing-3ob8
 
 
 ## Microsoft Semantic Kernel (Python)
@@ -539,16 +541,16 @@ Upstream sample PR (if open): search `samples/add-daoxe-openai-compatible` on se
 
 ## Viblo (Vietnam tutorial)
 
-English client-setup tutorial (billing-friction framing):
+**Preferred for VN readers:** full Vietnamese draft (publish on Viblo with Language=Vietnamese):
 
-https://viblo.asia/p/wire-cline-continue-claude-code-to-one-multi-protocol-gateway-when-card-checkout-fails-PoL7emEk4vk
+https://gist.github.com/seven7763/4256a404bbe8b00407ce6f5973198218
 
-Claude Code host-root vs `/v1` (404 debug):
-https://viblo.asia/p/claude-code-404-on-third-party-gateways-host-root-vs-v1-y0VGwXe0VPA
+English posts already live (direct links; may be spam-filtered from homepage):
 
-Note: first post may sit in Viblo spam review briefly; direct link works.
+- Client setup: https://viblo.asia/p/wire-cline-continue-claude-code-to-one-multi-protocol-gateway-when-card-checkout-fails-PoL7emEk4vk
+- Claude Code host-root vs `/v1` (404): https://viblo.asia/p/claude-code-404-on-third-party-gateways-host-root-vs-v1-y0VGwXe0VPA
 
-CIS/VN operator paste packs live in the DaoXE promotion workspace (`cis-vn-expanded-channels-pack`).
+CIS/VN operator paste packs: https://gist.github.com/seven7763/8f294b086a5d0e6f981c852d62b8c587
 
 ## Microsoft AutoGen (AgentChat)
 
