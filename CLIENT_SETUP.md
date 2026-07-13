@@ -168,6 +168,41 @@ Upstream docs PR: https://github.com/anomalyco/opencode/pull/36649
 
 DaoXE also exposes OpenAI Responses and Anthropic Messages for other clients; OpenCode’s path above is Chat Completions via the OpenAI-compatible package.
 
+## Kilo Code
+
+DaoXE is already present in the [models.dev](https://models.dev) catalog that
+[Kilo Code](https://github.com/Kilo-Org/kilocode) refreshes. Kilo uses the
+OpenAI-compatible path for this provider.
+
+In the VS Code extension, open **Settings → Providers**, add **DaoXE**, enter
+your API key, and select an exact model ID available to your account. If DaoXE
+is not visible, open **Show more providers** and refresh the provider catalog.
+
+For the Kilo CLI, export the key and configure the provider in `kilo.json`:
+
+```bash
+export DAOXE_API_KEY="your-api-key"
+```
+
+```jsonc
+{
+  "provider": {
+    "daoxe": {
+      "env": ["DAOXE_API_KEY"]
+    }
+  },
+  "model": "daoxe/YOUR_DAOXE_MODEL_ID"
+}
+```
+
+Replace `YOUR_DAOXE_MODEL_ID` with an exact model ID available to your account.
+Kilo connects through `https://daoxe.com/v1`; DaoXE's Responses, Anthropic
+Messages, and image endpoints remain available to clients that use those
+protocols. DaoXE is not available in mainland China.
+
+- Upstream documentation issue: https://github.com/Kilo-Org/kilocode/issues/12172
+- Upstream documentation PR: https://github.com/Kilo-Org/kilocode/pull/12173
+
 ## Goose
 
 DaoXE has a declarative OpenAI-compatible provider PR for [goose](https://github.com/aaif-goose/goose) (bundled JSON + registry). Until it merges, configure a custom OpenAI-compatible endpoint:
@@ -508,4 +543,3 @@ Add an OpenAI-compatible host pointing at DaoXE:
 3. API key from the DaoXE dashboard; load models from your account catalog.
 
 Upstream PR: https://github.com/enricoros/big-AGI/pull/1160
-
