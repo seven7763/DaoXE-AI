@@ -139,6 +139,18 @@ DaoXE has a first-class LLM provider PR for [AnythingLLM](https://github.com/Min
 
 Upstream PR (open): https://github.com/Mintplex-Labs/anything-llm/pull/6003
 
+
+## FastGPT
+
+DaoXE has a self-host model-config docs PR for [FastGPT](https://github.com/labring/FastGPT) (EN + zh). Until it merges, add a custom model + OpenAI channel:
+
+- **Protocol:** OpenAI
+- **Base URL:** `https://daoxe.com/v1`
+- **API Key:** your DaoXE key
+- **Model IDs:** exact IDs from your account catalog (`GET /v1/models`)
+
+Upstream PR (open): https://github.com/labring/FastGPT/pull/7295
+
 ## LibreChat
 
 Add a custom endpoint in `librechat.yaml` (see LibreChat docs for the full file):
