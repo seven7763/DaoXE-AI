@@ -285,6 +285,6 @@ npm test
 Тесты работают с локальным mock-ответом, не требуют `DAOXE_API_KEY`, не
 подключаются к DaoXE и не расходуют баланс.
 
-## Русскоязычный канал
+## Русскоязычный канал (CIS / релоканты)
 
-Telegram: [@daoxe_api_ru](https://t.me/daoxe_api_ru)
+Telegram: [@daoxe_api_ru](https://t.me/daoxe_api_ru) — заметки для **русскоязычных разработчиков** (CIS и глобальные релоканты): multi-protocol gateway, OpenAI-compatible path, Anthropic Messages. Это языковой канал, а не geo-target «только РФ».

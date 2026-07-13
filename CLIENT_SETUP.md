@@ -142,14 +142,16 @@ Upstream PR (open): https://github.com/Mintplex-Labs/anything-llm/pull/6003
 
 ## FastGPT
 
-DaoXE has a self-host model-config docs PR for [FastGPT](https://github.com/labring/FastGPT) (EN + zh). Until it merges, add a custom model + OpenAI channel:
+Add DaoXE as a **custom OpenAI channel** in FastGPT self-host model config (no built-in vendor page required):
 
 - **Protocol:** OpenAI
 - **Base URL:** `https://daoxe.com/v1`
 - **API Key:** your DaoXE key
 - **Model IDs:** exact IDs from your account catalog (`GET /v1/models`)
 
-Upstream PR (open): https://github.com/labring/FastGPT/pull/7295
+Optional: if your stack supports an Anthropic channel type, DaoXE also speaks `POST https://daoxe.com/v1/messages` (same key; account-scoped model IDs).
+
+> Upstream docs PR https://github.com/labring/FastGPT/pull/7295 was **closed** (maintainers only accept first-party model-cloud vendor tutorials). Use the generic OpenAI channel steps above instead.
 
 
 ## LLM CLI (simonw/llm)
