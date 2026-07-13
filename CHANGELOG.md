@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+- Normalize the Postman image-generation starter onto `{{DAOXE_API_KEY}}` and
+  `{{DAOXE_IMAGE_MODEL}}` with a structured URL object.
+- Extend local Postman tests and README/zh/zh-TW guidance for the five-endpoint
+  starter (models, chat, messages, responses, images).
+
 ## 0.2.0 - 2026-07-11
 
 - Add a low-cost `smoke` command for one-model availability checks.

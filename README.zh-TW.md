@@ -29,8 +29,8 @@ https://daoxe.com/v1
 - 使用 `smoke` 向一個模型傳送一次小型請求，確認目前是否能正常呼叫。
 - 使用 `compare` 依序測試 2～3 個模型，比較本次請求的狀態、延遲與 token 用量。
 - 透過 cURL、Node.js 或 Python 執行 OpenAI Chat Completions 範例。
-- 匯入 Postman 範本，測試模型清單、Chat Completions、Responses 與 Anthropic
-  Messages 請求。
+- 匯入 Postman 範本，測試模型清單、Chat Completions、Responses、Anthropic
+  Messages，以及可用的 image generation 介面 請求。
 - 在完全不連線至 DaoXE、不消耗帳戶餘額的情況下執行本機 mock 測試。
 
 > **費用提醒：** `smoke` 會傳送 1 次真實生成請求；`compare` 會向每個模型各傳送
@@ -123,6 +123,7 @@ console.log(response.choices[0].message.content);
 | OpenAI Chat Completions | `POST https://daoxe.com/v1/chat/completions` | cURL、Node.js、Python、Postman |
 | OpenAI Responses | `POST https://daoxe.com/v1/responses` | Postman |
 | Anthropic Messages | `POST https://daoxe.com/v1/messages` | Postman |
+| OpenAI Image Generations | `POST https://daoxe.com/v1/images/generations` | Postman |
 
 實際可用的模型與功能取決於目前帳戶及伺服器端設定。建議先查詢 `/v1/models`，再用
 回傳的正確 ID 傳送小型請求。
@@ -211,8 +212,10 @@ python python_chat.py
 2. 選擇 `DaoXE API - Example (set local values)` 環境。
 3. 將控制台建立的 key 填入 `DAOXE_API_KEY` 的本機值；此變數已標記為 secret，
    儲存庫中的預設值為空白。
-4. 先傳送 **List models**，再將回傳的正確模型 ID 填入 `DAOXE_MODEL`。
-5. 選擇一個生成請求並傳送。範本將最大輸出限制為 8 個 token。
+4. 先傳送 **List models**，再將回傳的正確文字模型 ID 填入 `DAOXE_MODEL`。
+5. 若要測試圖片介面，請將帳戶目前可用的圖片模型 ID 填入 `DAOXE_IMAGE_MODEL`。
+6. 選擇一個生成請求並傳送（Chat Completions / Messages / Responses / Image）。
+   文字生成範本將最大輸出限制為 8 個 token。
 
 填入真實 key 後，請勿匯出或提交 Postman 環境檔案。範本中的生成請求可能產生
 費用。
