@@ -474,3 +474,38 @@ danh sách blog. Claude Code: `ANTHROPIC_BASE_URL=https://daoxe.com` (host root)
 + `ANTHROPIC_AUTH_TOKEN`. DaoXE is multi-model multi-protocol; **not available in
 mainland China**. Billing-friction checklist (DEV):
 https://dev.to/seven7763/testing-an-ai-api-from-a-country-where-the-official-card-checkout-keeps-failing-3ob8
+
+## Microsoft AutoGen (AgentChat)
+
+Use the OpenAI-compatible model client with DaoXE:
+
+```python
+import os
+from autogen_ext.models.openai import OpenAIChatCompletionClient
+
+client = OpenAIChatCompletionClient(
+    model="YOUR_DAOXE_MODEL_ID",  # exact ID from your DaoXE account
+    api_key=os.environ["DAOXE_API_KEY"],
+    base_url="https://daoxe.com/v1",
+    model_info={
+        "vision": False,
+        "function_calling": True,
+        "json_output": True,
+        "family": "unknown",
+        "structured_output": True,
+    },
+)
+```
+
+Upstream docs PR: https://github.com/microsoft/autogen/pull/7952
+
+## big-AGI
+
+Add an OpenAI-compatible host pointing at DaoXE:
+
+1. Models settings → add OpenAI-compatible / custom host.
+2. Host: `https://daoxe.com` (app may append `/v1`).
+3. API key from the DaoXE dashboard; load models from your account catalog.
+
+Upstream PR: https://github.com/enricoros/big-AGI/pulls?q=is%3Apr+DaoXE
+
