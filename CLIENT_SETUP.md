@@ -509,7 +509,7 @@ danh sách blog. Claude Code: `ANTHROPIC_BASE_URL=https://daoxe.com` (host root)
 + `ANTHROPIC_AUTH_TOKEN`. DaoXE is multi-model multi-protocol; **not available in
 mainland China**.
 
-- Full Vietnamese Viblo draft (paste-ready): https://gist.github.com/seven7763/4256a404bbe8b00407ce6f5973198218
+- Full Vietnamese Viblo post: https://viblo.asia/p/gan-cline-continue-claude-code-vao-mot-multi-protocol-gateway-khi-the-quoc-te-hay-fail-R5JRQpzz4Gv
 - Billing-friction checklist (DEV, EN): https://dev.to/seven7763/testing-an-ai-api-from-a-country-where-the-official-card-checkout-keeps-failing-3ob8
 
 
@@ -541,9 +541,11 @@ Upstream sample PR (if open): search `samples/add-daoxe-openai-compatible` on se
 
 ## Viblo (Vietnam tutorial)
 
-**Preferred for VN readers:** full Vietnamese draft (publish on Viblo with Language=Vietnamese):
+**Preferred for VN readers:** full Vietnamese Viblo post:
 
-https://gist.github.com/seven7763/4256a404bbe8b00407ce6f5973198218
+https://viblo.asia/p/gan-cline-continue-claude-code-vao-mot-multi-protocol-gateway-khi-the-quoc-te-hay-fail-R5JRQpzz4Gv
+
+Draft gist: https://gist.github.com/seven7763/4256a404bbe8b00407ce6f5973198218
 
 English posts already live (direct links; may be spam-filtered from homepage):
 
