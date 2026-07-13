@@ -766,6 +766,22 @@ m = Memory.from_config(config)
 
 
 
+
+
+## OpenAI Agents SDK (Python)
+
+Use `OpenAIChatCompletionsModel` with a custom base URL:
+
+```python
+# base_url="https://daoxe.com/v1"
+# api_key from DaoXE dashboard
+# model: exact ID from GET /v1/models
+```
+
+Upstream docs PR (if open): https://github.com/openai/openai-agents-python/pull/3826  
+DaoXE multi-model multi-protocol; this path is Chat Completions. Not available in mainland China.
+
+
 ## Graphiti
 
 Use Graphiti's OpenAI-compatible client with DaoXE:
