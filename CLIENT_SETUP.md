@@ -776,6 +776,19 @@ m = Memory.from_config(config)
 
 
 
+
+
+## STORM (stanford-oval)
+
+Run STORM with LiteLLM-style OpenAI-compatible base:
+
+- `api_base` / base URL: `https://daoxe.com/v1`
+- API key + account-scoped model IDs
+
+Upstream example PR (if open): https://github.com/stanford-oval/storm/pull/484  
+Not available in mainland China.
+
+
 ## Open Interpreter
 
 Configure a custom OpenAI-compatible / multi-protocol provider toward DaoXE:
