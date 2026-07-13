@@ -539,6 +539,23 @@ kernel.add_service(
 
 Upstream sample PR (if open): search `samples/add-daoxe-openai-compatible` on semantic-kernel forks.
 
+
+
+## GPT Researcher
+
+GPT Researcher can use any OpenAI-compatible Chat Completions endpoint via env:
+
+```bash
+export OPENAI_API_KEY="your_daoxe_key"
+export OPENAI_BASE_URL="https://daoxe.com/v1"
+export OPENAI_MODEL_NAME="exact_account_model_id"  # from GET /v1/models
+```
+
+DaoXE is multi-model multi-protocol; this client path uses Chat Completions only.
+Upstream docs PR (if open): search `docs/daoxe-openai-compatible-gateway` on gpt-researcher forks.
+Not available in mainland China. Prefer live model IDs from your account.
+
+
 ## Viblo (Vietnam tutorial)
 
 **Preferred for VN readers:** full Vietnamese Viblo post:
