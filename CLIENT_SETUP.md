@@ -129,6 +129,16 @@ DaoXE has a declarative OpenAI-compatible provider PR for [goose](https://github
 
 Upstream PR (open): https://github.com/aaif-goose/goose/pull/10412
 
+## AnythingLLM
+
+DaoXE has a first-class LLM provider PR for [AnythingLLM](https://github.com/Mintplex-Labs/anything-llm) (settings + onboarding + live `/models`). Until it merges, use **Generic OpenAI**:
+
+- **Base URL:** `https://daoxe.com/v1`
+- **API Key:** your DaoXE key
+- **Model:** exact ID from your account catalog
+
+Upstream PR (open): https://github.com/Mintplex-Labs/anything-llm/pull/6003
+
 ## LibreChat
 
 Add a custom endpoint in `librechat.yaml` (see LibreChat docs for the full file):
