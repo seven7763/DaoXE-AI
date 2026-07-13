@@ -541,6 +541,21 @@ Upstream sample PR (if open): search `samples/add-daoxe-openai-compatible` on se
 
 
 
+
+
+## Langfuse (OpenAI drop-in)
+
+Point Langfuse OpenAI instrumentation / SDK base URL at DaoXE:
+
+- Base URL: `https://daoxe.com/v1`
+- API key: DaoXE dashboard key
+- Model: exact ID from your account catalog (`GET /v1/models`)
+
+DaoXE is multi-model multi-protocol; Langfuse OpenAI path uses Chat Completions-compatible traffic.
+Upstream docs PR (if open): search DaoXE under langfuse-docs integrations/gateways.
+Not available in mainland China.
+
+
 ## GPT Researcher
 
 GPT Researcher can use any OpenAI-compatible Chat Completions endpoint via env:
