@@ -772,6 +772,22 @@ m = Memory.from_config(config)
 
 
 
+
+
+## ElizaOS
+
+Set OpenAI-compatible env for Eliza model providers:
+
+```bash
+export OPENAI_API_KEY="your_daoxe_key"
+export OPENAI_BASE_URL="https://daoxe.com/v1"
+# model id from GET /v1/models (account-scoped)
+```
+
+Upstream docs PR (if open): https://github.com/elizaOS/eliza/pull/16283  
+Multi-protocol gateway; not available in mainland China.
+
+
 ## Strands Agents (community OpenAI-compatible)
 
 Use Strands `OpenAIModel` (or equivalent OpenAI-compatible provider) with:
