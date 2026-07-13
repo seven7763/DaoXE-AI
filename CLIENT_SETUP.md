@@ -178,6 +178,8 @@ Notes:
 - Client UIs differ: some want base `https://daoxe.com`, others
   `https://daoxe.com/v1`. Match the client docs; the Messages path remains
   `/v1/messages`.
+- **Claude Code CLI:** for the native `ANTHROPIC_BASE_URL` / `ANTHROPIC_AUTH_TOKEN`
+  setup (no proxy or router), see [CLAUDE_CODE.md](CLAUDE_CODE.md).
 - Related discussion: [CC Switch DaoXE universal preset](https://github.com/farion1231/cc-switch/issues/5258).
 - Postman starter: `postman/DaoXE.postman_collection.json` → **Anthropic - Messages**.
 
