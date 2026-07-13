@@ -774,6 +774,20 @@ m = Memory.from_config(config)
 
 
 
+
+
+## Open Interpreter
+
+Configure a custom OpenAI-compatible / multi-protocol provider toward DaoXE:
+
+- Base: `https://daoxe.com/v1` (Chat Completions path)
+- Anthropic Messages where the client supports `wire_api=messages` / host-root patterns — see upstream docs
+- Model IDs from your account catalog only
+
+Upstream docs PR (if open): https://github.com/openinterpreter/openinterpreter/pull/1796  
+Not available in mainland China.
+
+
 ## ElizaOS
 
 Set OpenAI-compatible env for Eliza model providers:
