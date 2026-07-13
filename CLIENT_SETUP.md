@@ -778,6 +778,19 @@ m = Memory.from_config(config)
 
 
 
+
+
+## Ragas
+
+Use OpenAI-compatible LLM adapters with DaoXE:
+
+- `base_url=https://daoxe.com/v1`
+- API key + exact account model ID
+
+Upstream docs PR (if open): https://github.com/vibrantlabsai/ragas/pull/2849  
+Not available in mainland China.
+
+
 ## STORM (stanford-oval)
 
 Run STORM with LiteLLM-style OpenAI-compatible base:
