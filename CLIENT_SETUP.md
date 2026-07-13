@@ -585,6 +585,39 @@ Add an OpenAI-compatible host pointing at DaoXE:
 Upstream PR: https://github.com/enricoros/big-AGI/pull/1160
 
 
+
+## Hugging Face smolagents
+
+```python
+import os
+from smolagents import OpenAIModel
+
+model = OpenAIModel(
+    model_id=os.environ["DAOXE_MODEL"],
+    api_base="https://daoxe.com/v1",
+    api_key=os.environ["DAOXE_API_KEY"],
+)
+```
+
+Upstream: https://github.com/huggingface/smolagents/pull/2514
+
+## Agno
+
+```python
+import os
+from agno.agent import Agent
+from agno.models.openai import OpenAIChat
+
+agent = Agent(
+    model=OpenAIChat(
+        id=os.environ["DAOXE_MODEL"],
+        api_key=os.environ["DAOXE_API_KEY"],
+        base_url="https://daoxe.com/v1",
+    ),
+    markdown=True,
+)
+```
+
 ## LlamaIndex
 
 ```python
