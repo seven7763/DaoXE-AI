@@ -178,6 +178,44 @@ llm -m daoxe 'Reply with OK'
 
 Upstream PR (open): https://github.com/simonw/llm/pull/1528
 
+## LiteLLM
+
+DaoXE has an OpenAI-compatible provider registration PR for [LiteLLM](https://github.com/BerriAI/litellm) (`openai_like/providers.json`) plus a docs page PR.
+
+Until they merge, use either path:
+
+**A. Native prefix (after code PR merges):**
+
+```python
+import os
+from litellm import completion
+
+os.environ["DAOXE_API_KEY"] = "<DAOXE_API_KEY>"
+response = completion(
+    model="daoxe/YOUR_DAOXE_MODEL_ID",
+    messages=[{"role": "user", "content": "Reply with OK"}],
+    max_tokens=8,
+)
+```
+
+**B. Generic OpenAI-compatible (works today):**
+
+```yaml
+# litellm proxy config
+model_list:
+  - model_name: daoxe
+    litellm_params:
+      model: openai/YOUR_DAOXE_MODEL_ID
+      api_base: https://daoxe.com/v1
+      api_key: os.environ/DAOXE_API_KEY
+```
+
+Model IDs are account-scoped (`GET /v1/models`). Not available in mainland China.
+
+- Code PR: https://github.com/BerriAI/litellm/pull/33051
+- Docs PR: https://github.com/BerriAI/litellm-docs/pull/550
+- Config gist: https://gist.github.com/seven7763/06f1454705acaba2919a9be0a96565c4
+
 ## LibreChat
 
 Add a custom endpoint in `librechat.yaml` (see LibreChat docs for the full file):
