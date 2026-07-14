@@ -1031,3 +1031,18 @@ Add a custom OpenAI-compatible provider in Crush config (`crush.json` / `.crush.
 Upstream PR (open): https://github.com/charmbracelet/crush/pull/3306  
 Multi-protocol gateway; this path is Chat Completions. Not available in mainland China.
 
+## MassGen
+
+Use a Chat Completions backend with DaoXE:
+
+```yaml
+backend:
+  type: "chatcompletion"
+  model: "YOUR_DAOXE_MODEL_ID"
+  base_url: "https://daoxe.com/v1"
+  api_key: "${DAOXE_API_KEY}"
+```
+
+Upstream PR (open): https://github.com/massgen/MassGen/pull/1130  
+Multi-protocol gateway; Chat Completions path. Not available in mainland China.
+
