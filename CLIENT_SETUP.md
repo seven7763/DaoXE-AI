@@ -993,6 +993,13 @@ openai:
   api_key: "${DAOXE_API_KEY}"
 ```
 
-Upstream PR (open): https://github.com/lastmile-ai/mcp-agent/pull/719  
+Upstream PR (open): https://github.com/lastmile-ai/mcp-agent/pull/720  
+Multi-protocol gateway; Chat Completions path. Not available in mainland China.
+
+## KaibanJS
+
+Use OpenAI-compatible provider settings with DaoXE base URL `https://daoxe.com/v1` and an exact account model ID.
+
+Upstream PR (open): https://github.com/kaiban-ai/KaibanJS/pull/288  
 Multi-protocol gateway; Chat Completions path. Not available in mainland China.
 
