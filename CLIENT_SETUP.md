@@ -1028,6 +1028,6 @@ Add a custom OpenAI-compatible provider in Crush config (`crush.json` / `.crush.
 }
 ```
 
-Upstream PR (open): https://github.com/charmbracelet/crush/pull/3307  
+Upstream PR (open): https://github.com/charmbracelet/crush/pull/3306  
 Multi-protocol gateway; this path is Chat Completions. Not available in mainland China.
 
