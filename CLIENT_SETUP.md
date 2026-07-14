@@ -1003,3 +1003,31 @@ Use OpenAI-compatible provider settings with DaoXE base URL `https://daoxe.com/v
 Upstream PR (open): https://github.com/kaiban-ai/KaibanJS/pull/288  
 Multi-protocol gateway; Chat Completions path. Not available in mainland China.
 
+## Crush (Charm)
+
+Add a custom OpenAI-compatible provider in Crush config (`crush.json` / `.crush.json`):
+
+```json
+{
+  "$schema": "https://charm.land/crush.json",
+  "providers": {
+    "daoxe": {
+      "type": "openai-compat",
+      "base_url": "https://daoxe.com/v1",
+      "api_key": "$DAOXE_API_KEY",
+      "models": [
+        {
+          "id": "YOUR_DAOXE_MODEL_ID",
+          "name": "DaoXE (account model ID)",
+          "context_window": 128000,
+          "default_max_tokens": 8192
+        }
+      ]
+    }
+  }
+}
+```
+
+Upstream PR (open): https://github.com/charmbracelet/crush/pull/3307  
+Multi-protocol gateway; this path is Chat Completions. Not available in mainland China.
+
