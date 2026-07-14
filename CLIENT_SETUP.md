@@ -951,3 +951,28 @@ Use Stagehand with an OpenAI-compatible model endpoint:
 Upstream PR (if open): https://github.com/browserbase/stagehand/pull/2350  
 Not available in mainland China.
 
+## Guidance
+
+Use [`guidance.models.OpenAI`](https://github.com/guidance-ai/guidance) with DaoXE:
+
+```python
+import os
+from guidance.models import OpenAI
+
+lm = OpenAI(
+    "YOUR_DAOXE_MODEL_ID",
+    api_key=os.environ["DAOXE_API_KEY"],
+    base_url="https://daoxe.com/v1",
+)
+```
+
+Upstream PR (open): https://github.com/guidance-ai/guidance/pull/1487  
+Multi-protocol gateway; this path is Chat Completions. Not available in mainland China.
+
+## OGX / Llama Stack
+
+Configure a remote OpenAI-compatible provider with base URL `https://daoxe.com/v1` and your DaoXE key. Use account-scoped model IDs.
+
+Upstream docs PR (open): https://github.com/ogx-ai/ogx/pull/6298  
+Not available in mainland China.
+
