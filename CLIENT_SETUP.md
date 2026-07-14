@@ -976,3 +976,23 @@ Configure a remote OpenAI-compatible provider with base URL `https://daoxe.com/v
 Upstream docs PR (open): https://github.com/ogx-ai/ogx/pull/6298  
 Not available in mainland China.
 
+## mcp-agent (lastmile)
+
+Configure OpenAI-compatible provider settings with DaoXE:
+
+```yaml
+# mcp_agent.config.yaml
+openai:
+  default_model: YOUR_DAOXE_MODEL_ID
+  base_url: "https://daoxe.com/v1"
+```
+
+```yaml
+# mcp_agent.secrets.yaml
+openai:
+  api_key: "${DAOXE_API_KEY}"
+```
+
+Upstream PR (open): https://github.com/lastmile-ai/mcp-agent/pull/719  
+Multi-protocol gateway; Chat Completions path. Not available in mainland China.
+
