@@ -238,6 +238,44 @@ Optional: if your stack supports an Anthropic channel type, DaoXE also speaks `P
 > Upstream docs PR https://github.com/labring/FastGPT/pull/7295 was **closed** (maintainers only accept first-party model-cloud vendor tutorials). Use the generic OpenAI channel steps above instead.
 
 
+## Dify
+
+DaoXE works with [Dify](https://dify.ai) on the **OpenAI-compatible Chat Completions** path. Model IDs stay account-scoped — paste exact IDs from your DaoXE dashboard or `GET /v1/models`. DaoXE is multi-protocol on the platform (including Anthropic Messages); this Dify path is Chat Completions. Not available in mainland China.
+
+### A) Marketplace DaoXE plugin (when listed)
+
+Source: https://github.com/seven7763/dify-plugin-daoxe  
+Marketplace PR (open): https://github.com/langgenius/dify-plugins/pull/2708
+
+1. Install the **DaoXE** model provider plugin from the Dify Marketplace (or load the local `.difypkg` for self-host testing).
+2. **Settings → Model Provider → DaoXE** → paste your DaoXE API key.
+3. Add a **customizable** model: enter an exact model ID from your DaoXE account.
+4. Endpoint is fixed to `https://daoxe.com/v1` inside the plugin (no arbitrary base URL field).
+
+### B) Built-in OpenAI-API-compatible (works today)
+
+1. **Settings → Model Provider → OpenAI-API-compatible** (install the official plugin if needed).
+2. **API Base URL:** `https://daoxe.com/v1`
+3. **API Key:** your DaoXE key
+4. **Model Name:** exact account catalog ID
+
+Optional toggles (context size, tool call, vision) should match the model you chose. Do not hardcode a public static model list.
+
+## n8n
+
+[n8n](https://n8n.io) does **not** need a built-in DaoXE node. Use the **OpenAI Chat Model** (LangChain) sub-node with OpenAI credentials and override **Base URL**.
+
+1. Create credentials: **OpenAI** → paste your DaoXE API key.
+2. Set **Base URL** to `https://daoxe.com/v1` (credential field defaults to `https://api.openai.com/v1`; override it).
+3. Optional: **Add Custom Header** only if your workflow needs an extra header (usually not required).
+4. In the workflow, attach **OpenAI Chat Model** to an Agent/Chain and set **Model** to an exact ID from your DaoXE account (`GET /v1/models` or dashboard). Model load uses the credential base URL + `/models`.
+
+Notes:
+
+- This path is OpenAI-compatible Chat Completions. DaoXE also exposes Anthropic Messages and Responses for other clients; use those only with nodes/clients that speak those APIs.
+- n8n does not accept unsolicited first-party vendor nodes or promotional docs list entries (vendor-neutral). Prefer this Base URL setup over waiting for a branded node.
+- Not available in mainland China.
+
 ## Khoj
 
 Self-hosted [Khoj](https://github.com/khoj-ai/khoj) can use DaoXE as an OpenAI-compatible API base (same pattern as LiteLLM / OpenRouter proxies):
