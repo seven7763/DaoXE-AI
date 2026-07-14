@@ -276,6 +276,31 @@ Notes:
 - n8n does not accept unsolicited first-party vendor nodes or promotional docs list entries (vendor-neutral). Prefer this Base URL setup over waiting for a branded node.
 - Not available in mainland China.
 
+## Portkey AI Gateway
+
+DaoXE has a first-class provider PR for [Portkey AI Gateway](https://github.com/Portkey-AI/gateway) (`provider="daoxe"`, OpenAI-compatible Chat Completions at `https://daoxe.com/v1`).
+
+Upstream PR (open): https://github.com/Portkey-AI/gateway/pull/1733
+
+Until it merges, use any OpenAI-compatible custom provider path Portkey documents, pointing at:
+
+- **Base URL:** `https://daoxe.com/v1`
+- **API key:** your DaoXE dashboard key
+- **Model:** exact account catalog ID (`GET /v1/models`)
+
+After merge, a typical client looks like:
+
+```python
+from portkey_ai import Portkey
+
+client = Portkey(
+    provider="daoxe",
+    Authorization="<DAOXE_API_KEY>",
+)
+```
+
+Notes: multi-model multi-protocol gateway; this Portkey provider is the Chat Completions surface. Anthropic Messages remains available to clients that call DaoXE that way. Not available in mainland China.
+
 ## Khoj
 
 Self-hosted [Khoj](https://github.com/khoj-ai/khoj) can use DaoXE as an OpenAI-compatible API base (same pattern as LiteLLM / OpenRouter proxies):
