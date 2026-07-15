@@ -133,9 +133,9 @@ Upstream PR (open): https://github.com/musistudio/claude-code-router/pull/1530
 
 DaoXE is multi-model and multi-protocol. OpenCode can use the **OpenAI-compatible** path (`@ai-sdk/openai-compatible`).
 
-### A) models.dev listing (if present)
+### A) models.dev listing (live)
 
-After https://github.com/anomalyco/models.dev/pull/3199, DaoXE may appear in OpenCode’s provider list from [models.dev](https://models.dev). Use your DaoXE API key and an exact account model ID.
+DaoXE is in the live [models.dev](https://models.dev) catalog (`id: daoxe`, API `https://daoxe.com/v1`, env `DAOXE_API_KEY`) after https://github.com/anomalyco/models.dev/pull/3199. In OpenCode, select DaoXE from the provider list (or refresh the models.dev catalog), paste your API key, and pick an exact account model ID. Catalog entries can change; always verify IDs against your DaoXE account / `GET /v1/models`.
 
 ### B) Custom provider config (always works)
 
@@ -170,9 +170,10 @@ DaoXE also exposes OpenAI Responses and Anthropic Messages for other clients; Op
 
 ## Kilo Code
 
-DaoXE is already present in the [models.dev](https://models.dev) catalog that
-[Kilo Code](https://github.com/Kilo-Org/kilocode) refreshes. Kilo uses the
-OpenAI-compatible path for this provider.
+DaoXE is already present in the live [models.dev](https://models.dev) catalog that
+[Kilo Code](https://github.com/Kilo-Org/kilocode) refreshes (`id: daoxe`). Kilo uses the
+OpenAI-compatible path for this provider. Optional docs PR (open):
+https://github.com/Kilo-Org/kilocode/pull/12173
 
 In the VS Code extension, open **Settings → Providers**, add **DaoXE**, enter
 your API key, and select an exact model ID available to your account. If DaoXE
