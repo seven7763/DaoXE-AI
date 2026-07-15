@@ -164,7 +164,7 @@ After https://github.com/anomalyco/models.dev/pull/3199, DaoXE may appear in Ope
 
 3. Run `/models` and select the DaoXE entry.
 
-Upstream docs PR: https://github.com/anomalyco/opencode/pull/36649
+Upstream docs PR (closed — do not resubmit immediately): https://github.com/anomalyco/opencode/pull/36649
 
 DaoXE also exposes OpenAI Responses and Anthropic Messages for other clients; OpenCode’s path above is Chat Completions via the OpenAI-compatible package.
 
@@ -221,7 +221,7 @@ DaoXE has a first-class LLM provider PR for [AnythingLLM](https://github.com/Min
 - **API Key:** your DaoXE key
 - **Model:** exact ID from your account catalog
 
-Upstream PR (open): https://github.com/Mintplex-Labs/anything-llm/pull/6003
+Upstream PR (closed — do not resubmit immediately): https://github.com/Mintplex-Labs/anything-llm/pull/6003
 
 
 ## FastGPT
@@ -792,7 +792,7 @@ lm = dspy.LM(
 dspy.configure(lm=lm)
 ```
 
-Upstream: https://github.com/stanfordnlp/dspy/pull/10008
+Upstream PR (closed — do not resubmit immediately): https://github.com/stanfordnlp/dspy/pull/10008
 
 ## Haystack
 
@@ -807,7 +807,7 @@ generator = OpenAIChatGenerator(
 )
 ```
 
-Upstream: https://github.com/deepset-ai/haystack/pull/11989
+Upstream PR (closed — do not resubmit immediately): https://github.com/deepset-ai/haystack/pull/11989
 
 ## Mem0
 
@@ -876,7 +876,7 @@ Configure a custom OpenAI-compatible / multi-protocol provider toward DaoXE:
 - Anthropic Messages where the client supports `wire_api=messages` / host-root patterns — see upstream docs
 - Model IDs from your account catalog only
 
-Upstream docs PR (if open): https://github.com/openinterpreter/openinterpreter/pull/1796  
+Upstream PR (closed — do not resubmit immediately): https://github.com/openinterpreter/openinterpreter/pull/1796  
 Not available in mainland China.
 
 
@@ -890,7 +890,7 @@ export OPENAI_BASE_URL="https://daoxe.com/v1"
 # model id from GET /v1/models (account-scoped)
 ```
 
-Upstream docs PR (if open): https://github.com/elizaOS/eliza/pull/16283  
+Upstream docs PR (closed — do not resubmit immediately): https://github.com/elizaOS/eliza/pull/16283  
 Multi-protocol gateway; not available in mainland China.
 
 
@@ -928,7 +928,7 @@ Use `OpenAIChatCompletionsModel` with a custom base URL:
 # model: exact ID from GET /v1/models
 ```
 
-Upstream docs PR (if open): https://github.com/openai/openai-agents-python/pull/3826  
+Upstream docs PR (closed — do not resubmit immediately): https://github.com/openai/openai-agents-python/pull/3826  
 DaoXE multi-model multi-protocol; this path is Chat Completions. Not available in mainland China.
 
 
