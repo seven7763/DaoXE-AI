@@ -242,17 +242,20 @@ Optional: if your stack supports an Anthropic channel type, DaoXE also speaks `P
 
 DaoXE works with [Dify](https://dify.ai) on the **OpenAI-compatible Chat Completions** path. Model IDs stay account-scoped — paste exact IDs from your DaoXE dashboard or `GET /v1/models`. DaoXE is multi-protocol on the platform (including Anthropic Messages); this Dify path is Chat Completions. Not available in mainland China.
 
-### A) Marketplace DaoXE plugin (when listed)
+### A) Marketplace DaoXE plugin (merged)
 
 Source: https://github.com/seven7763/dify-plugin-daoxe  
-Marketplace PR (open): https://github.com/langgenius/dify-plugins/pull/2708
+Marketplace PR (merged): https://github.com/langgenius/dify-plugins/pull/2708  
+Upstream tree: `daoxe/daoxe` (`daoxe-0.0.1.difypkg`)
 
 1. Install the **DaoXE** model provider plugin from the Dify Marketplace (or load the local `.difypkg` for self-host testing).
 2. **Settings → Model Provider → DaoXE** → paste your DaoXE API key.
 3. Add a **customizable** model: enter an exact model ID from your DaoXE account.
 4. Endpoint is fixed to `https://daoxe.com/v1` inside the plugin (no arbitrary base URL field).
 
-### B) Built-in OpenAI-API-compatible (works today)
+If Marketplace listing lags after merge, use path **B** below (OpenAI-API-compatible) — same Chat Completions endpoint.
+
+### B) Built-in OpenAI-API-compatible (always works)
 
 1. **Settings → Model Provider → OpenAI-API-compatible** (install the official plugin if needed).
 2. **API Base URL:** `https://daoxe.com/v1`
