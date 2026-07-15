@@ -117,7 +117,7 @@ DaoXE is available as a **built-in provider** in DeepChat (merged upstream):
 
 If your DeepChat build is older than the merge, add DaoXE as a custom OpenAI-compatible endpoint with base URL `https://daoxe.com/v1` until you upgrade.
 
-Upstream PR: https://github.com/ThinkInAIXYZ/deepchat/pull/1948
+Upstream PR (merged): https://github.com/ThinkInAIXYZ/deepchat/pull/1948
 
 ## Claude Code Router (CCR)
 
@@ -876,7 +876,7 @@ Configure a custom OpenAI-compatible / multi-protocol provider toward DaoXE:
 - Anthropic Messages where the client supports `wire_api=messages` / host-root patterns — see upstream docs
 - Model IDs from your account catalog only
 
-Upstream PR (closed — do not resubmit immediately): https://github.com/openinterpreter/openinterpreter/pull/1796  
+Upstream docs PR (closed — do not resubmit immediately): https://github.com/openinterpreter/openinterpreter/pull/1796  
 Not available in mainland China.
 
 
