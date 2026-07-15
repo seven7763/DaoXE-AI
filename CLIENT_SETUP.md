@@ -969,14 +969,14 @@ lm = OpenAI(
 )
 ```
 
-Upstream PR (open): https://github.com/guidance-ai/guidance/pull/1487  
+Upstream PR (closed — do not resubmit immediately): https://github.com/guidance-ai/guidance/pull/1487  
 Multi-protocol gateway; this path is Chat Completions. Not available in mainland China.
 
 ## OGX / Llama Stack
 
 Configure a remote OpenAI-compatible provider with base URL `https://daoxe.com/v1` and your DaoXE key. Use account-scoped model IDs.
 
-Upstream docs PR (open): https://github.com/ogx-ai/ogx/pull/6298  
+Upstream docs PR (**merged**): https://github.com/ogx-ai/ogx/pull/6298  
 Not available in mainland China.
 
 ## mcp-agent (lastmile)
@@ -1036,14 +1036,20 @@ Multi-protocol gateway; this path is Chat Completions. Not available in mainland
 
 ## MassGen
 
-Use a Chat Completions backend with DaoXE:
+Use a Chat Completions backend with DaoXE. The backend falls back to
+`OPENAI_API_KEY` when `api_key` is omitted (there is no special automatic
+`DAOXE_API_KEY` env resolution):
 
 ```yaml
 backend:
   type: "chatcompletion"
   model: "YOUR_DAOXE_MODEL_ID"
   base_url: "https://daoxe.com/v1"
-  api_key: "${DAOXE_API_KEY}"
+  api_key: "${OPENAI_API_KEY}"
+```
+
+```bash
+export OPENAI_API_KEY="<your-daoxe-api-key>"
 ```
 
 Upstream PR (open): https://github.com/massgen/MassGen/pull/1130  
