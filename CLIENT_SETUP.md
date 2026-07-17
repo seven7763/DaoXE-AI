@@ -13,12 +13,24 @@ image generation for other tools.
   is useful for discovery, but your account's current model list is
   authoritative
 
+### Already merged “pick provider / catalog” paths
+
+If you want UI discovery instead of only custom OpenAI-compatible fields:
+
+| Path | Status | What to do |
+| --- | --- | --- |
+| **DeepChat** | first-class provider **merged** | Settings → **DaoXE** → key + account model ID ([PR #1948](https://github.com/ThinkInAIXYZ/deepchat/pull/1948)) |
+| **models.dev** | catalog key `daoxe` **live** | `api=https://daoxe.com/v1`, env `DAOXE_API_KEY` — used by OpenCode / Kilo and other catalog clients ([PR #3199](https://github.com/anomalyco/models.dev/pull/3199)) |
+| **Dify** | Marketplace plugin **merged** | Install DaoXE model plugin, or OpenAI-API-compatible → Base URL `https://daoxe.com/v1` ([PR #2708](https://github.com/langgenius/dify-plugins/pull/2708)) |
+
+Tracking + soft-share facts: [Discussion #7](https://github.com/seven7763/DaoXE-AI/discussions/7).
+
 Never paste a real API key into source control, screenshots, issue reports, or
 shared configuration files. A request from one of these clients may be billed.
 
-> DaoXE is configured below through each client's generic OpenAI-compatible
-> option. This guide does **not** claim that DaoXE is a built-in provider or an
-> official integration in any of these clients.
+> Most IDE coding clients below still use the **generic OpenAI-compatible**
+> option (no built-in DaoXE dropdown). DeepChat / models.dev / Dify are the
+> exceptions already merged upstream.
 
 ## Cline
 
