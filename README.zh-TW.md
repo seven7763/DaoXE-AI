@@ -11,6 +11,8 @@
 
 [![CI](https://github.com/seven7763/DaoXE-AI/actions/workflows/ci.yml/badge.svg)](https://github.com/seven7763/DaoXE-AI/actions/workflows/ci.yml)
 
+[客戶端接入](CLIENT_SETUP.md) | [Claude Code](CLAUDE_CODE.md) | [已合併路徑：DeepChat / models.dev / Dify](https://github.com/seven7763/DaoXE-AI/discussions/7)
+
 這個儲存庫為使用繁體中文的開發者提供一組小巧、透明且可直接檢視的
 [DaoXE](https://daoxe.com/?utm_source=github&utm_medium=organic&utm_campaign=zh_tw_launch)
 API 範例，以及一個能控制請求數量的連線測試工具。

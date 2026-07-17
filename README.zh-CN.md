@@ -4,6 +4,8 @@
 
 [![CI](https://github.com/seven7763/DaoXE-AI/actions/workflows/ci.yml/badge.svg)](https://github.com/seven7763/DaoXE-AI/actions/workflows/ci.yml)
 
+[客户端接入](CLIENT_SETUP.md) | [Claude Code](CLAUDE_CODE.md) | [已合并路径：DeepChat / models.dev / Dify](https://github.com/seven7763/DaoXE-AI/discussions/7)
+
 这个仓库为中文开发者与海外华语用户提供一组小而透明、可以直接审查的
 [DaoXE](https://daoxe.com/?utm_source=github&utm_medium=organic&utm_campaign=cn_launch) API 示例，以及一个控制请求数量的连通性测试工具。
 DaoXE 的 OpenAI 兼容 base URL 是：

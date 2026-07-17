@@ -2,7 +2,7 @@
 
 [**English**](README.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [Русский](#russian)
 
-[**Multi-protocol setup checklist (Cline + Claude Code)**](docs/multi-protocol-gateway-setup.md) | [**Client setup: Cline, Roo Code, Continue**](CLIENT_SETUP.md) | [**Claude Code**](CLAUDE_CODE.md) | [Postman collection](postman/DaoXE.postman_collection.json)
+[**Multi-protocol setup checklist (Cline + Claude Code)**](docs/multi-protocol-gateway-setup.md) | [**Client setup: Cline, Roo Code, Continue**](CLIENT_SETUP.md) | [**Claude Code**](CLAUDE_CODE.md) | [Postman collection](postman/DaoXE.postman_collection.json) | [**Merged paths (DeepChat / models.dev / Dify)**](https://github.com/seven7763/DaoXE-AI/discussions/7)
 
 [![CI](https://github.com/seven7763/DaoXE-AI/actions/workflows/ci.yml/badge.svg)](https://github.com/seven7763/DaoXE-AI/actions/workflows/ci.yml)
 
