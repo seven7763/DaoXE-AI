@@ -1,8 +1,8 @@
 # DaoXE API examples and low-cost benchmark
 
-[**English**](README.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [Русский](#russian)
+[**English**](README.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [Русский](README.ru.md)
 
-[**Multi-protocol setup checklist (Cline + Claude Code)**](docs/multi-protocol-gateway-setup.md) | [**Client setup: Cline, Roo Code, Continue**](CLIENT_SETUP.md) | [**Claude Code**](CLAUDE_CODE.md) | [Postman collection](postman/DaoXE.postman_collection.json) | [**Merged paths (DeepChat / models.dev / Dify)**](https://github.com/seven7763/DaoXE-AI/discussions/7)
+[**Multi-protocol setup checklist (Cline + Claude Code)**](docs/multi-protocol-gateway-setup.md) | [**Client setup: Cursor, Cline, Roo Code, Continue**](CLIENT_SETUP.md) | [**Claude Code**](CLAUDE_CODE.md) | [Postman collection](postman/DaoXE.postman_collection.json) | [**Merged paths (DeepChat / models.dev / Dify)**](https://github.com/seven7763/DaoXE-AI/discussions/7) | [**Latency & price benchmark**](https://github.com/seven7763/llm-gateway-benchmark)
 
 [![CI](https://github.com/seven7763/DaoXE-AI/actions/workflows/ci.yml/badge.svg)](https://github.com/seven7763/DaoXE-AI/actions/workflows/ci.yml)
 
@@ -25,7 +25,7 @@ HTTP status, latency, token usage, and a coarse error category.
 
 ## First successful call
 
-1. Create an account at [daoxe.com](https://daoxe.com) and create an API key in
+1. Create an account at [daoxe.com](https://daoxe.com/?utm_source=github&utm_medium=organic&utm_campaign=daoxe_ai&utm_content=readme_en_quickstart) and create an API key in
    the dashboard.
 2. Choose an exact, currently available model ID from your DaoXE account.
 3. Use Node.js 18 or newer and export the key and model. Do not paste the key
@@ -167,7 +167,7 @@ https://daoxe.com/v1
 
 ## Первый успешный запрос
 
-1. Создайте аккаунт на [daoxe.com](https://daoxe.com) и выпустите API-ключ в
+1. Создайте аккаунт на [daoxe.com](https://daoxe.com/?utm_source=github&utm_medium=organic&utm_campaign=daoxe_ai&utm_content=readme_ru_quickstart&utm_term=ru) и выпустите API-ключ в
    личном кабинете.
 2. Скопируйте точный ID доступной модели из своего аккаунта DaoXE.
 3. Установите Node.js 18 или новее. Передавайте ключ только через переменную

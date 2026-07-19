@@ -65,6 +65,36 @@ Notes:
 Official Cline field names and OpenAI Compatible flow:
 [Cline OpenAI Compatible provider guide](https://github.com/cline/cline/blob/main/docs/provider-config/openai-compatible.mdx).
 
+## Cursor
+
+**Cursor** has no built-in DaoXE provider. You connect it through Cursor's
+generic **custom OpenAI base URL** option. This drives Cursor's chat/Agent with
+the models you add; it is not an official integration.
+
+1. Open **Cursor Settings → Models**.
+2. Under **API Keys**, enable **OpenAI API Key** and paste the key created in
+   your DaoXE dashboard.
+3. Expand it and turn on **Override OpenAI Base URL**; set it to
+   `https://daoxe.com/v1`.
+4. Under **Model Names**, add an **exact** model ID currently available to your
+   DaoXE account (copy from your catalog or `GET /v1/models`; do not hardcode a
+   list from a blog post). Add each model you want to use.
+5. Click **Verify** / save. Verification sends one live request to
+   `/chat/completions` with that model name, so it must be an exact model your
+   account serves.
+
+Notes:
+
+- **Cursor still routes requests through Cursor's own servers** even with a
+  custom key and base URL. Treat this as a privacy/latency consideration.
+- A custom OpenAI base URL primarily affects **chat / Agent** with the models
+  you added. **Tab autocomplete** and some Cursor-model-specific features may
+  still require Cursor's built-in models and will not use DaoXE.
+- Enabling a custom base URL can disable Cursor's stock OpenAI models; you can
+  then use only the models you explicitly added.
+- Use the OpenAI-compatible **Chat Completions** shape here (base URL ends in
+  `/v1`). A request may be billed; prefer live model IDs from your account.
+
 ## Roo Code
 
 1. Open Roo Code in VS Code and select the gear icon to open its settings.
