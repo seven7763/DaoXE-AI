@@ -142,6 +142,10 @@ npm test
 The tests use an in-process mock. They do not require `DAOXE_API_KEY`, do not
 connect to DaoXE, and do not consume balance.
 
+## Acknowledgements
+
+Thanks to the [**LINUX DO**](https://linux.do) community for discussion and feedback on multi-protocol OpenAI-compatible gateway setup and testing.
+
 ---
 
 <a id="russian"></a>
