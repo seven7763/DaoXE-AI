@@ -292,3 +292,9 @@ npm test
 ## Русскоязычный канал (CIS / релоканты)
 
 Telegram: [@daoxe_api_ru](https://t.me/daoxe_api_ru) — заметки для **русскоязычных разработчиков** (CIS и глобальные релоканты): multi-protocol gateway, OpenAI-compatible path, Anthropic Messages. Это языковой канал, а не geo-target «только РФ».
+
+Русскоязычные материалы:
+
+- Гид по подключению клиентов (Cursor, Cline, Claude Code и др.): [daoxe-guide/ru](https://seven7763.github.io/daoxe-guide/ru/?utm_source=github&utm_medium=organic&utm_campaign=ru_test_0904&utm_content=readme_ru)
+- Пошаговая статья «один ключ — несколько моделей»: [Hashnode](https://daoxe-notes.hashnode.dev/cursor-cline-claude-code-endpoint?utm_source=github&utm_medium=organic&utm_campaign=ru_test_0904&utm_content=readme_ru_article)
+- 20 готовых промпт-шаблонов на русском (открытый gist, без регистрации): [gist](https://gist.github.com/seven7763/748f67315790d64f4e8804598a654df7)
